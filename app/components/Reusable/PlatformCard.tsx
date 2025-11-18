@@ -1,0 +1,57 @@
+import Image from "next/image";
+type PlatformCardProps = {
+  subtitle: string;
+  title: string;
+  desc: string;
+  imageSrc: string;
+  extraClasses?: string;
+  imageWrapper?: string;
+  allowOverflow?: boolean;
+};
+export default function PlatformCard({
+  subtitle,
+  title,
+  desc,
+  imageSrc,
+  extraClasses,
+  imageWrapper,
+  allowOverflow = false,
+}: PlatformCardProps) {
+  return (
+    <div
+      className={`rounded-20 bg-grey border border-primary/15 ${
+        allowOverflow ? "overflow-visible" : "overflow-hidden"
+      }  flex even:flex-row-reverse relative min-h-127 `}
+    >
+      <div className=" p-12 flex flex-col gap-2 justify-center w-3/5">
+        <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
+        <h1 className="font-poppins text-40 leading-120 text-primary -tracking-[1%]">
+          {title}
+        </h1>
+        <p className="font-space-grotesk text-xl leading-150 text-primary pt-4">
+          {desc}
+        </p>
+      </div>
+      {imageWrapper ? (
+        <div className={`absolute ${imageWrapper}`}>
+          <Image
+            src={`/images/${imageSrc}.webp`}
+            alt={title}
+            fill
+            className={`object-contain ${extraClasses}`}
+            unoptimized
+          />
+        </div>
+      ) : (
+        <Image
+          src={`/images/${imageSrc}.webp`}
+          alt={title}
+          width={0}
+          height={0}
+          className={`object-contain ${extraClasses}`}
+          unoptimized
+        />
+      )}
+    </div>
+  );
+}

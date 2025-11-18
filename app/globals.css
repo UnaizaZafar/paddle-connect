@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-mono: var(--font-geist-mono);
+}
+@font-face {
+  font-family: Vastago Grotesk;
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url("/fonts/VastagoGrotesk-Bold.otf") format("otf");
+}
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-vastago-grotesk: "Vastago Grotesk", sans-serif;
+
+  /* COLORS */
+  --color-primary: #090d02;
+  --color-grey: #f2f2f2;
+  /* Text */
+  --text-40: 40px;
+  --text-56: 56px;
+  --text-155: 155px;
+
+  /* LINE HEIGHT */
+  --leading-120: 120%;
+  --leading-140: 140%;
+  --leading-150: 150%;
+  /* RADIUS */
+  --radius-20: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}

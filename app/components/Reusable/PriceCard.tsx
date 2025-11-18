@@ -1,0 +1,57 @@
+import CTAButton from "./CTAButton";
+import ListItem from "./ListItem";
+
+type PriceCardProps = {
+  icon: React.ReactNode;
+  price: string;
+  title: string;
+  desc: string;
+  duration: string;
+  buttonText: string;
+};
+export default function PriceCard({
+  icon,
+  price,
+  title,
+  desc,
+  duration,
+  buttonText,
+}: PriceCardProps) {
+  return (
+    <div className="bg-grey rounded-20 p-8 border border-primary/15 w-full flex flex-col gap-8">
+      <div className=" flex gap-8 justify-between">
+        <div className="flex flex-col gap-2">
+          {icon}
+          <h5 className="pt-2 font-poppins text-2xl leading-140 -tracking-[1%] text-primary">
+            {title}
+          </h5>
+          <p className="font-space-grotesk text-primary leading-150 ">{desc}</p>
+        </div>
+        <h1 className="text-56 font-poppins leading-120 text-primary ">
+          {price}
+        </h1>
+      </div>
+      <div className="border-t border-primary/15" />
+      <div className="flex flex-col gap-4 text-primary">
+        <p className="font-space-grotesk leading-150 ">{duration}</p>
+        <div className="grid grid-cols-2 gap-6 justify-between">
+          <ListItem text="player management" />
+          <ListItem text="Club notifications system" />
+
+          <ListItem text="Create & manage matches" />
+          <ListItem text="Player profile management" />
+          <ListItem text="Skill-level based matchmaking" />
+          <ListItem text="Access to web dashboard & mobile app" />
+          <ListItem text="Upgrade anytime — no credit card required" />
+        </div>
+      </div>
+      <span className="pt-4.5">
+        <CTAButton
+          variant="primary-colored"
+          text={buttonText}
+          showArrow={false}
+        />
+      </span>
+    </div>
+  );
+}
