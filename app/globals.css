@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 body{
-  background: red;
+  background: white;
 }
 
 @theme inline {
