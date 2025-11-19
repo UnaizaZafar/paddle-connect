@@ -5,16 +5,16 @@ export default function HeroSection() {
   return (
     <div className="bg-[url(/images/hero-image.webp)] bg-no-repeat bg-cover bg-bottom">
       <div className="bg-black/50">
-        <div className="h-screen flex flex-col gap-6 justify-center items-center  max-w-5xl mx-auto relative">
-          <h1 className="font-bold font-poppins text-6xl leading-120 text-white text-center">
+        <div className="min-h-screen h-auto flex flex-col gap-4 lg:gap-6 justify-center items-center  max-w-5xl mx-auto relative max-lg:px-4">
+          <h1 className="font-bold font-poppins text-3xl lg:text-5xl xl:text-6xl leading-120 text-white text-center">
             Smart Matchmaking for Paddle Clubs and Players
           </h1>
-          <p className="font-space-grotesk text-center text-2xl leading-150 text-white">
+          <p className="font-space-grotesk text-center text-lg lg:text-xl xl:text-2xl leading-150 text-white">
             Automate player connections and match management with our powerful
             platform. Streamline court bookings, skill tracking, and player
             interactions across paddle clubs.
           </p>
-          <div className="flex gap-4 pt-2 ">
+          <div className="flex max-md:flex-col gap-2 lg:gap-4 pt-2 max-md:w-full">
             <CTAButton
               text="Start Free Trail"
               variant="primary-colored"
@@ -25,15 +25,15 @@ export default function HeroSection() {
               showArrow={false}
             />
           </div>
-          <div className="place-self-end flex gap-3 absolute bottom-10 xl:bottom-30 pt-20">
+          <div className="place-self-end flex gap-3 absolute max-md:right-20 bottom-10 xl:bottom-30 pt-20">
             {user1}
-            <span className="rounded-full absolute translate-x-9 z-10">
+            <span className="rounded-full absolute translate-x-6 lg:translate-x-9 z-10">
               {user2}
             </span>
-            <span className="rounded-full absolute translate-x-18 z-20">
+            <span className="rounded-full absolute translate-x-12 lg:translate-x-18 z-20">
               {user3}
             </span>
-            <p className="font-poppins font-medium text-white translate-x-18">
+            <p className="font-poppins text-sm lg:text-base font-medium text-white translate-x-12 lg:translate-x-18">
               20K+ <br /> <span className="font-normal">Active Users</span>{" "}
             </p>
           </div>

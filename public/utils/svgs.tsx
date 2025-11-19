@@ -1,9 +1,10 @@
 export const logo = [
   <svg
     key={"paddle-connect-logo"}
-    width={214}
-    height={39}
+    // width={214}
+    // height={39}
     viewBox="0 0 214 39"
+    className="h-8 lg:h-10"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -60,8 +61,9 @@ export const arrow = [
 export const user1 = [
   <svg
     key={"user1"}
-    width={48}
-    height={48}
+    // width={48}
+    // height={48}
+    className="size-8 lg:size-12"
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -97,8 +99,9 @@ export const user1 = [
 export const user2 = [
   <svg
     key={"user2"}
-    width={48}
-    height={48}
+     // width={48}
+    // height={48}
+    className="size-8 lg:size-12"
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -134,8 +137,9 @@ export const user2 = [
 export const user3 = [
   <svg
     key={"user3"}
-    width={48}
-    height={48}
+    // width={48}
+    // height={48}
+    className="size-8 lg:size-12"
     viewBox="0 0 48 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
