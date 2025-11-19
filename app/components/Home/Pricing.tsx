@@ -4,13 +4,13 @@ import SectionHeader from "../Reusable/SectionHeader";
 
 export default function Pricing() {
   return (
-    <section className="max-w-7xl mx-auto py-28 flex flex-col gap-4 items-center">
+    <section className="max-w-7xl mx-auto px-4 lg:px-6 2xl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
       <SectionHeader
         tagText="Plans"
         heading="Pricing"
         desc="Flexible solutions for padel clubs of all sizes"
       />
-      <div className="grid grid-cols-2 gap-8 pt-16">
+      <div className="grid md:grid-cols-2 gap-2 md:gap-4 xl:gap-8 pt-6 md:pt-10 lg:pt-16">
         <PriceCard
           icon={free}
           price="Free"
