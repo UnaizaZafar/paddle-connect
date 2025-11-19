@@ -16,7 +16,7 @@ export default function SectionHeader({
         <h1 className="font-semibold leading-120 font-poppins text-5xl -tracking-[1%] text-primary">
           {heading}
         </h1>
-        <p className="font-space-grotesk text-2xl text-center text-primary">
+        <p className="font-space-grotesk text-2xl text-center text-primary max-w-3xl">
           {desc}
         </p>
       </div>

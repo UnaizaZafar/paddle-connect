@@ -10,7 +10,7 @@ export default function WhyChoosePaddleConnect() {
         heading="Why Choose Paddle Connect"
         desc="Transform your padel club management experience"
       />
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid grid-cols-2 gap-5 pt-16">
         <div className="flex rounded-20 bg-grey border border-primary/15 overflow-hidden">
           <CardData
             padding="px-6"
