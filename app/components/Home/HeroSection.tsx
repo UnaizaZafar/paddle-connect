@@ -3,9 +3,9 @@ import CTAButton from "../Reusable/CTAButton";
 
 export default function HeroSection() {
   return (
-    <div className="bg-[url(/images/hero-image.webp)] bg-no-repeat bg-cover">
+    <div className="bg-[url(/images/hero-image.webp)] bg-no-repeat bg-cover bg-bottom">
       <div className="bg-black/50">
-        <div className="h-screen flex flex-col gap-6 justify-center items-center  max-w-5xl mx-auto">
+        <div className="h-screen flex flex-col gap-6 justify-center items-center  max-w-5xl mx-auto relative">
           <h1 className="font-bold font-poppins text-6xl leading-120 text-white text-center">
             Smart Matchmaking for Paddle Clubs and Players
           </h1>
@@ -25,7 +25,7 @@ export default function HeroSection() {
               showArrow={false}
             />
           </div>
-          <div className="place-self-end flex gap-3 relative pt-20">
+          <div className="place-self-end flex gap-3 absolute bottom-10 xl:bottom-30 pt-20">
             {user1}
             <span className="rounded-full absolute translate-x-9 z-10">
               {user2}
