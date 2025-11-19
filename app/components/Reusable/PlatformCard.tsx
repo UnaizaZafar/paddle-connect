@@ -23,7 +23,7 @@ export default function PlatformCard({
         allowOverflow ? "overflow-visible" : "overflow-hidden"
       }  flex even:flex-row-reverse relative min-h-127 `}
     >
-      <div className=" p-12 flex flex-col gap-2 justify-center w-3/5">
+      <div className={`${imageWrapper?"pl-12 pr-28 ":"p-12"} flex flex-col gap-2 justify-center w-3/5`}>
         <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
         <h1 className="font-poppins text-40 leading-120 text-primary -tracking-[1%]">
           {title}
@@ -48,7 +48,7 @@ export default function PlatformCard({
           alt={title}
           width={0}
           height={0}
-          className={`object-contain ${extraClasses}`}
+          className={`object-contain pl-10.5 ${extraClasses}`}
           unoptimized
         />
       )}
