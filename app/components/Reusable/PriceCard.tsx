@@ -35,7 +35,7 @@ export default function PriceCard({
       <div className="border-t border-primary/15" />
       <div className="flex flex-col gap-4 text-primary">
         <p className="font-space-grotesk leading-150 ">{duration}</p>
-        <div className="grid grid-cols-2 gap-3 lg:gap-6 justify-between">
+        <div className="grid grid-cols-2 gap-3 lg:gap-x-6 lg:gap-y-4 justify-between">
           {priceListItems.map((item, index) => (
             <ListItem key={index} text={item} />
           ))}

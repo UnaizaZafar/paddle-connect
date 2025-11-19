@@ -3,7 +3,7 @@ import { logo } from "@/public/utils/svgs";
 import CTAButton from "../Reusable/CTAButton";
 import Link from "next/link";
 import { menu } from "@/public/utils/data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function Navbar() {
   return (
     <>
@@ -30,8 +30,15 @@ export default function Navbar() {
 }
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
   return (
-    <nav className="flex lg:hidden flex-col bg-white w-full absolute top-0 left-0 p-4 z-50">
+    <nav className="flex lg:hidden flex-col bg-white w-full top-0 left-0 p-4 z-50 fixed">
       <div className="flex items-center justify-between">
         <Link href={"/"}>{logo}</Link>
         <button className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>

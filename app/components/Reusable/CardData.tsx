@@ -25,11 +25,11 @@ export default function CardData({
       } flex flex-col justify-center gap-2 bg-grey ${description?"h-full":"h-max"} w-full`}
     >
       <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
-      <p
+      <h5
         className={`font-poppins ${sizeVariantClasses[size]} text-primary leading-120`}
       >
         {title}
-      </p>
+      </h5>
       {description && (
         <p
           className={`font-space-grotesk leading-150 text-primary ${

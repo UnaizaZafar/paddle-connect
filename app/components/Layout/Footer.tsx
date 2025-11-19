@@ -4,7 +4,7 @@ import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";
 export default function Footer() {
   return (
-    <footer className="px-4 lg:px-6 2xl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
+    <footer className="px-4 lg:px-6 xl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
       <div className="flex max-lg:flex-col max-lg:gap-5 justify-between">
         <div className="flex flex-col gap-6">
           <span>{logo}</span>
@@ -47,7 +47,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <h1 className="text-40 md:text-7xl lg:text-8xl xl:text-155 text-black md:leading-150 font-vastago-grotesk text-center">
+      <h1 className="text-40 md:text-7xl lg:text-8xl xl:text-155 text-black md:leading-150 font-vastago-grotesk max-xl:text-center">
         Paddle Connect
       </h1>
       <div className="border-t border-primary/15 pt-8 flex max-md:flex-col max-md:gap-2 justify-between">
