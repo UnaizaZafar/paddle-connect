@@ -5,7 +5,7 @@ import { CardSizeVariant } from "../Reusable/CardData";
 
 export default function PaddleWorkflow() {
   return (
-    <section className="max-w-7xl mx-auto px-4 lg:px-6 xl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
+    <section className="max-w-7xl mx-auto px-4 lg:px-6 2xl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
       <SectionHeader
         tagText="Process"
         heading="How Paddle Art Works"

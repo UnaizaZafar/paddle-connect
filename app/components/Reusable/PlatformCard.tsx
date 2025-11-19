@@ -21,14 +21,14 @@ export default function PlatformCard({
     <div
       className={`rounded-20 bg-grey border border-primary/15 ${
         allowOverflow ? "overflow-visible" : "overflow-hidden"
-      }  flex even:flex-row-reverse relative min-h-127 `}
+      }  flex max-lg:flex-col lg:even:flex-row-reverse relative xl:min-h-127`}
     >
-      <div className={`${imageWrapper?"pl-12 pr-28 ":"p-12"} flex flex-col gap-2 justify-center w-3/5`}>
+      <div className={`${imageWrapper?"p-6 lg:p-8 lg:pl-12 lg:pr-28 ":"p-6 lg:p-8 xl:p-12"} flex flex-col gap-2 justify-center w-full lg:w-3/5`}>
         <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
-        <h1 className="font-poppins text-40 leading-120 text-primary -tracking-[1%]">
+        <h1 className="font-poppins text-3xl lg:text-4xl xl:text-40 leading-120 text-primary -tracking-[1%]">
           {title}
         </h1>
-        <p className="font-space-grotesk text-xl leading-150 text-primary pt-4">
+        <p className="font-space-grotesk text-lg lg:text-xl leading-150 text-primary lg:pt-4">
           {desc}
         </p>
       </div>
@@ -38,7 +38,7 @@ export default function PlatformCard({
             src={`/images/${imageSrc}.webp`}
             alt={title}
             fill
-            className={`object-contain ${extraClasses}`}
+            className={`object-contain hidden lg:block ${extraClasses}`}
             unoptimized
           />
         </div>
@@ -48,7 +48,7 @@ export default function PlatformCard({
           alt={title}
           width={0}
           height={0}
-          className={`object-contain pl-10.5 ${extraClasses}`}
+          className={`object-contain lg:pl-10.5 ${extraClasses}`}
           unoptimized
         />
       )}
