@@ -19,7 +19,7 @@ export default function CTAButton({
   return (
     <Link href="/"
       className={`group flex items-center gap-3 ${variantClasses[variant]}
-      rounded-xl py-2.5 px-6 font-space-grotesk font-medium justify-center leading-150`}
+      rounded-xl py-2 md:py-2.5 px-3 md:px-6 text-sm md:text-base font-space-grotesk font-medium justify-center leading-150`}
     >
       {text}
       {showArrow && <span className="group-hover:-rotate-45 transition duration-300">{arrow}</span>}

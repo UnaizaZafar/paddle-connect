@@ -4,11 +4,11 @@ import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";
 export default function Footer() {
   return (
-    <footer className="py-20 max-w-7xl mx-auto flex flex-col gap-12">
-      <div className="flex justify-between">
+    <footer className="px-4 lg:px-6 2xl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
+      <div className="flex max-lg:flex-col max-lg:gap-5 justify-between">
         <div className="flex flex-col gap-6">
           <span>{logo}</span>
-          <div className="flex gap-8">
+          <div className="flex gap-4 lg:gap-8">
             {menu.map((item) => (
               <Link
                 key={item.id}
@@ -22,14 +22,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 lg:gap-4">
           <p className="font-space-grotesk font-bold leading-150">
             Join our newsletter
           </p>
           <div className="flex gap-4">
             <input
               placeholder="Enter you email"
-              className="rounded-xl border border-primary/15 py-2 px-3 bg-primary/5 font-space-grotesk leading-150 text-primary/60 min-w-93.5"
+              className="rounded-xl border border-primary/15 py-1 lg:py-2 px-2 lg:px-3 bg-primary/5 font-space-grotesk leading-150 text-primary/60 w-2/3 md:min-w-93.5"
             />
             <CTAButton
               showArrow={false}
@@ -47,10 +47,10 @@ export default function Footer() {
           </p>
         </div>
       </div>
-      <h1 className="text-155 text-black leading-150 font-vastago-grotesk">
+      <h1 className="text-40 md:text-7xl lg:text-8xl xl:text-155 text-black md:leading-150 font-vastago-grotesk text-center">
         Paddle Connect
       </h1>
-      <div className="border-t border-primary/15 pt-8 flex justify-between">
+      <div className="border-t border-primary/15 pt-8 flex max-md:flex-col justify-between">
         <div className="flex gap-4">
           <Link
             href={"/"}
