@@ -46,7 +46,6 @@ const HamburgerMenu = () => {
             strokeLinejoin="round"
             className="w-6 h-6 transition-all duration-300"
           >
-            {/* Top Line */}
             <path
               d="M4 8 L20 8"
               className={`
@@ -54,8 +53,6 @@ const HamburgerMenu = () => {
           ${isOpen ? "-rotate-45 translate-y-1" : "rotate-0"}
         `}
             />
-
-            {/* Bottom Line */}
             <path
               d="M4 16 L20 16"
               className={`
