@@ -12,11 +12,11 @@ export default function SectionHeader({
   return (
     <>
       <TagPill text={tagText} />
-      <div className="flex flex-col gap-6 items-center">
-        <h1 className="font-semibold leading-120 font-poppins text-5xl -tracking-[1%] text-primary">
+      <div className="flex flex-col gap-4 lg:gap-6 items-center text-center">
+        <h1 className="font-semibold leading-120 font-poppins text-3xl lg:text-5xl -tracking-[1%] text-primary">
           {heading}
         </h1>
-        <p className="font-space-grotesk text-2xl text-center text-primary max-w-3xl">
+        <p className="font-space-grotesk text-xl lg:text-2xl text-center text-primary max-w-3xl">
           {desc}
         </p>
       </div>

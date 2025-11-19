@@ -5,13 +5,13 @@ import { CardSizeVariant } from "../Reusable/CardData";
 
 export default function PaddleWorkflow() {
   return (
-    <section className="max-w-7xl mx-auto py-28 flex flex-col gap-4 items-center">
+    <section className="max-w-7xl mx-auto px-4 lg:px-6 xl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
       <SectionHeader
-        tagText="Procress"
+        tagText="Process"
         heading="How Paddle Art Works"
         desc="Seamless platform connecting players, clubs, and matches"
       />
-      <div className="grid grid-cols-[48%_50%]  gap-5 mt-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[48%_50%] gap-3 lg:gap-5 mt-6 md:mt-10 lg:mt-16">
         {cardData.map((item) => (
           <Card
             key={item.id}

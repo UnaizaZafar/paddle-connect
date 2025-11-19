@@ -25,7 +25,7 @@ export const menu = [
 export const cardData = [
   {
     id: 1,
-    padding: "p-12",
+    // padding: "p-6 lg:p-8 xl:p-12",
     image: "card3",
     subtitle: "Onboard",
     title: "Club Registration and Invite Players",
@@ -34,7 +34,7 @@ export const cardData = [
   },
   {
     id: 2,
-    padding: "px-6",
+    padding: "p-3 xl:px-6",
     image: "card2",
     subtitle: "Connect",
     title: "Match Requests and Player Interactions",
@@ -42,7 +42,7 @@ export const cardData = [
   },
   {
     id: 3,
-    padding: "px-6",
+    padding: "p-3 xl:px-6",
     image: "card1",
     subtitle: "Evolve",
     title: "Smart Level & Notification",

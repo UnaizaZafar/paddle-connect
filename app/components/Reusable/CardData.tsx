@@ -7,8 +7,8 @@ type CardDataProps = {
   padding?: string;
 };
 const sizeVariantClasses: Record<CardSizeVariant, string> = {
-  small: "text-2xl",
-  large: "text-40",
+  small: "text-xl xl:text-2xl",
+  large: "text-3xl lg:text-4xl xl:text-40",
 };
 
 export default function CardData({
@@ -21,7 +21,7 @@ export default function CardData({
   return (
     <div
       className={`${
-        padding ?? "p-12"
+        padding ?? "p-6 lg:p-8 xl:p-12"
       } flex flex-col justify-center gap-2 bg-grey h-full w-full`}
     >
       <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
@@ -32,7 +32,7 @@ export default function CardData({
       </p>
       <p
         className={`font-space-grotesk leading-150 text-primary ${
-          size === "large" && "pt-4"
+          size === "large" && "lg:pt-4"
         }`}
       >
         {description}
