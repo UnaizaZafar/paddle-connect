@@ -13,9 +13,10 @@ export default function Footer() {
               <Link
                 key={item.id}
                 href={item.link}
-                className="font-space-grotesk font-bold text-sm"
+                className="font-space-grotesk font-bold text-sm relative group"
               >
                 {item.name}
+                <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300"/>
               </Link>
             ))}
           </div>
@@ -39,7 +40,7 @@ export default function Footer() {
           <p className="text-xs leading-150 font-poppins text-primary">
             By subscribing you agree to our{" "}
             <span>
-              <Link href={"/"} className="underline ">
+              <Link href={"/"} className="underline hover:font-medium transition-all duration-150">
                 privacy policy
               </Link>{" "}
             </span>
@@ -53,19 +54,19 @@ export default function Footer() {
         <div className="flex gap-4">
           <Link
             href={"/"}
-            className="underline font-space-grotesk text-sm leading-150 text-primary"
+            className="underline font-space-grotesk text-sm leading-150 text-primary hover:font-medium transition-all duration-150"
           >
             Privacy policy
           </Link>
           <Link
             href={"/"}
-            className="underline font-space-grotesk text-sm leading-150 text-primary"
+            className="underline font-space-grotesk text-sm leading-150 text-primary hover:font-medium transition-all duration-150"
           >
             Terms of service
           </Link>
         </div>
         <p className="font-space-grotesk text-sm text-primary">
-          © 2025 Padel Connect. All rights reserved.
+          © 2025 Paddle Connect. All rights reserved.
         </p>
       </div>
     </footer>
