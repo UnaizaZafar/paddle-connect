@@ -1,4 +1,4 @@
-import { logo } from "@/public/svgs";
+import { logo } from "@/public/utils/svgs";
 import { menu } from "@/public/utils/data";
 import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";

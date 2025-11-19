@@ -1,4 +1,4 @@
-import { art_track, user_identity } from "@/public/svgs";
+import { art_track, user_identity } from "@/public/utils/svgs";
 import CardData from "../Reusable/CardData";
 import SectionHeader from "../Reusable/SectionHeader";
 import Image from "next/image";

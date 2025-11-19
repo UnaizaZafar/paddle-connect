@@ -3,7 +3,7 @@ import {
   approval,
   precision_manufacturing,
   serviceToolbox,
-} from "../svgs";
+} from "./svgs";
 
 export const menu = [
   {

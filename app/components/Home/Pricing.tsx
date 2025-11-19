@@ -1,4 +1,4 @@
-import { free, pro } from "@/public/svgs";
+import { free, pro } from "@/public/utils/svgs";
 import PriceCard from "../Reusable/PriceCard";
 import SectionHeader from "../Reusable/SectionHeader";
 
