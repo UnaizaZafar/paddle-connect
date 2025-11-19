@@ -8,7 +8,7 @@ export default function WhyChoosePaddleConnect() {
       <SectionHeader
         tagText="Value"
         heading="Why Choose Paddle Connect"
-        desc="Transform your padel club management experience"
+        desc="Transform your paddle club management experience"
       />
       <div className="grid lg:grid-cols-2 gap-3 lg:gap-5 pt-6 md:pt-10 lg:pt-16">
         <div className="flex rounded-20 bg-grey border border-primary/15 overflow-hidden">
@@ -31,7 +31,7 @@ export default function WhyChoosePaddleConnect() {
           <CardData
             padding="p-6 lg:p-8 xl:p-12"
             subtitle="Skill level tracking"
-            title="Adaptable SaaS solution for modern padel clubs"
+            title="Adaptable SaaS solution for modern paddle clubs"
             size="large"
           />
           <Image

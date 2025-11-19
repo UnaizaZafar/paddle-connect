@@ -8,7 +8,7 @@ export default function Pricing() {
       <SectionHeader
         tagText="Plans"
         heading="Pricing"
-        desc="Flexible solutions for padel clubs of all sizes"
+        desc="Flexible solutions for paddle clubs of all sizes"
       />
       <div className="grid md:grid-cols-2 gap-2 md:gap-4 xl:gap-8 pt-6 md:pt-10 lg:pt-16">
         <PriceCard
@@ -16,8 +16,8 @@ export default function Pricing() {
           price="Free"
           title="3-Month Free Trial"
           desc="Perfect for new or growing clubs"
-          duration="3 Months Trail Period"
-          buttonText="Start Free Trail"
+          duration="3 Months Trial Period"
+          buttonText="Start Free Trial"
         />
         <PriceCard
           icon={pro}

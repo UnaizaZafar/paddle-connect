@@ -28,7 +28,7 @@ export default function Footer() {
           </p>
           <div className="flex gap-4">
             <input
-              placeholder="Enter you email"
+              placeholder="Enter your email"
               className="rounded-xl border border-primary/15 py-1 lg:py-2 px-2 lg:px-3 bg-primary/5 font-space-grotesk leading-150 text-primary/60 w-2/3 md:min-w-93.5"
             />
             <CTAButton

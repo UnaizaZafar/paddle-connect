@@ -16,7 +16,7 @@ export default function HeroSection() {
           </p>
           <div className="flex max-md:flex-col gap-2 lg:gap-4 pt-2 max-md:w-full">
             <CTAButton
-              text="Start Free Trail"
+              text="Start Free Trial"
               variant="primary-colored"
             />
             <CTAButton

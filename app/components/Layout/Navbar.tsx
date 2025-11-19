@@ -22,7 +22,7 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <CTAButton text="Start Free Trail" variant="primary-black" />
+        <CTAButton text="Start Free Trial" variant="primary-black" />
       </nav>
       <HamburgerMenu />
     </>
