@@ -11,16 +11,14 @@ export default function Navbar() {
           <Link
             key={item.id}
             href={item.link}
-            className="font-space-grotesk leading-150 text-black"
+            className="font-space-grotesk leading-150 text-black group relative"
           >
             {item.name}
+            <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300" />
           </Link>
         ))}
       </div>
-      <CTAButton
-        text="Start Free Trail"
-        variant="primary-black"
-      />
+      <CTAButton text="Start Free Trail" variant="primary-black" />
     </nav>
   );
 }
