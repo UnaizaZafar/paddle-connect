@@ -11,7 +11,7 @@ export default function PaddleWorkflow() {
         heading="How Paddle Art Works"
         desc="Seamless platform connecting players, clubs, and matches"
       />
-      <div className="grid grid-cols-2  gap-5 mt-16">
+      <div className="grid grid-cols-[48%_50%]  gap-5 mt-16">
         {cardData.map((item) => (
           <Card
             key={item.id}

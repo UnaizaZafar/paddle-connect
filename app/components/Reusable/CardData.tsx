@@ -21,7 +21,7 @@ export default function CardData({
   return (
     <div
       className={`${
-        padding ? padding : "p-12"
+        padding ?? "p-12"
       } flex flex-col justify-center gap-2 bg-grey h-full w-full`}
     >
       <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
@@ -30,7 +30,11 @@ export default function CardData({
       >
         {title}
       </p>
-      <p className="font-space-grotesk leading-150 text-primary">
+      <p
+        className={`font-space-grotesk leading-150 text-primary ${
+          size === "large" && "pt-4"
+        }`}
+      >
         {description}
       </p>
     </div>
