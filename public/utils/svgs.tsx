@@ -1,8 +1,6 @@
 export const logo = [
   <svg
     key={"paddle-connect-logo"}
-    // width={214}
-    // height={39}
     viewBox="0 0 214 39"
     className="h-8 lg:h-10"
     fill="none"

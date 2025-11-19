@@ -1,4 +1,5 @@
-import { logo } from "@/public/utils/svgs";
+// import { logo } from "@/public/utils/svgs";
+import Image from "next/image";
 import { menu } from "@/public/utils/data";
 import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";
@@ -7,7 +8,14 @@ export default function Footer() {
     <footer className="px-4 lg:px-6 xl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
       <div className="flex max-lg:flex-col max-lg:gap-5 justify-between">
         <div className="flex flex-col gap-6">
-          <span>{logo}</span>
+          <Image
+            src="/images/logo.webp"
+            alt="PaddleConnect Logo"
+            width={214}
+            height={39}
+            className="w-max h-8 lg:h-10"
+          />
+
           <div className="flex gap-4 lg:gap-8">
             {menu.map((item) => (
               <Link
@@ -16,7 +24,7 @@ export default function Footer() {
                 className="font-space-grotesk font-bold text-sm relative group"
               >
                 {item.name}
-                <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300"/>
+                <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -40,7 +48,10 @@ export default function Footer() {
           <p className="text-xs leading-150 font-poppins text-primary">
             By subscribing you agree to our{" "}
             <span>
-              <Link href={"/"} className="underline hover:font-medium transition-all duration-150">
+              <Link
+                href={"/"}
+                className="underline hover:font-medium transition-all duration-150"
+              >
                 privacy policy
               </Link>{" "}
             </span>

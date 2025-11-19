@@ -2,13 +2,21 @@
 import { logo } from "@/public/utils/svgs";
 import CTAButton from "../Reusable/CTAButton";
 import Link from "next/link";
+import Image from "next/image";
 import { menu } from "@/public/utils/data";
 import { useState, useEffect } from "react";
 export default function Navbar() {
   return (
     <>
       <nav className="hidden lg:flex z-10 absolute top-6 left-1/2 -translate-x-1/2 lg:max-w-4xl xl:max-w-5xl w-full justify-between items-center rounded-[18px] bg-white py-2 pr-3.5 pl-5 mx-auto">
-        <Link href={"/"}>{logo}</Link>
+        <Link href={"/"}>
+          <Image
+            src="/images/logo.webp"
+            alt="PaddleConnect Logo"
+            width={214}
+            height={39}
+          />
+        </Link>
 
         <div className="flex gap-8">
           {menu.map((item) => (
@@ -40,7 +48,14 @@ const HamburgerMenu = () => {
   return (
     <nav className="flex lg:hidden flex-col bg-white w-full top-0 left-0 p-4 z-50 fixed">
       <div className="flex items-center justify-between">
-        <Link href={"/"}>{logo}</Link>
+        <Link href={"/"}>
+          <Image
+            src="/images/logo.webp"
+            alt="PaddleConnect Logo"
+            width={190}
+            height={39}
+          />
+        </Link>
         <button className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
           <svg
             key="menu-icon"
