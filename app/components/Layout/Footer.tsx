@@ -1,4 +1,3 @@
-// import { logo } from "@/public/utils/svgs";
 import Image from "next/image";
 import { menu } from "@/public/utils/data";
 import Link from "next/link";

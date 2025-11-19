@@ -1,5 +1,4 @@
 "use client";
-import { logo } from "@/public/utils/svgs";
 import CTAButton from "../Reusable/CTAButton";
 import Link from "next/link";
 import Image from "next/image";
