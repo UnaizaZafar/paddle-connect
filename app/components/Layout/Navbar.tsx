@@ -35,7 +35,35 @@ const HamburgerMenu = () => {
       <div className="flex items-center justify-between">
         <Link href={"/"}>{logo}</Link>
         <button className="cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-          {menuIcon}
+          <svg
+            key="menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="w-6 h-6 transition-all duration-300"
+          >
+            {/* Top Line */}
+            <path
+              d="M4 8 L20 8"
+              className={`
+          transition-all duration-300 origin-center
+          ${isOpen ? "-rotate-45 translate-y-1" : "rotate-0"}
+        `}
+            />
+
+            {/* Bottom Line */}
+            <path
+              d="M4 16 L20 16"
+              className={`
+          transition-all duration-300 origin-center
+          ${isOpen ? "rotate-45 -translate-y-0.5" : "rotate-0"}
+        `}
+            />
+          </svg>
         </button>
       </div>
 
@@ -54,7 +82,7 @@ const HamburgerMenu = () => {
             <Link
               key={item.id}
               href={item.link}
-              className="font-space-grotesk leading-150 text-black p-4 border-b border-b-grey"
+              className="font-space-grotesk leading-150 text-black p-4 border-b border-b-primary/20"
             >
               {item.name}
             </Link>

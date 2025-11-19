@@ -4,10 +4,6 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-body{
-  background: white;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -48,6 +44,8 @@ body{
 } */
 
 body {
+  background-color: white;
   background: var(--background);
   color: var(--foreground);
+  cursor: default;
 }

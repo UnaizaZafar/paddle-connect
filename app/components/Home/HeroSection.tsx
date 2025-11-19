@@ -25,7 +25,7 @@ export default function HeroSection() {
               showArrow={false}
             />
           </div>
-          <div className="place-self-end flex gap-3 absolute max-md:right-20 bottom-10 xl:bottom-30 pt-20">
+          <div className="place-self-end flex gap-3 absolute right-20 bottom-10 xl:bottom-30 pt-20">
             {user1}
             <span className="rounded-full absolute translate-x-6 lg:translate-x-9 z-10">
               {user2}
