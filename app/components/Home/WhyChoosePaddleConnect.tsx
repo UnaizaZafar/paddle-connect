@@ -20,7 +20,7 @@ export default function WhyChoosePaddleConnect() {
           />
           <Image
             src="/images/playground.webp"
-            alt={"image"}
+            alt={"Playground"}
             width={0}
             height={0}
             unoptimized
@@ -36,7 +36,7 @@ export default function WhyChoosePaddleConnect() {
           />
           <Image
             src="/images/screens.webp"
-            alt={"image"}
+            alt={"Mobile screens"}
             width={0}
             height={0}
             unoptimized

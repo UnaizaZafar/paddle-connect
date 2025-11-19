@@ -8,7 +8,7 @@ import WhyChoosePaddleConnect from "./components/Home/WhyChoosePaddleConnect";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <HeroSection />
       <PaddleWorkflow />
       <PaddlePlatform />
@@ -16,6 +16,6 @@ export default function Home() {
       <WhyChoosePaddleConnect />
       <Pricing/>
       <CTASection/>
-    </>
+    </main>
   );
 }
