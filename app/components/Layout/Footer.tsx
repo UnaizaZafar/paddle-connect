@@ -50,7 +50,7 @@ export default function Footer() {
       <h1 className="text-40 md:text-7xl lg:text-8xl xl:text-155 text-black md:leading-150 font-vastago-grotesk text-center">
         Paddle Connect
       </h1>
-      <div className="border-t border-primary/15 pt-8 flex max-md:flex-col justify-between">
+      <div className="border-t border-primary/15 pt-8 flex max-md:flex-col max-md:gap-2 justify-between">
         <div className="flex gap-4">
           <Link
             href={"/"}
