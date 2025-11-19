@@ -95,3 +95,12 @@ export const coreFeaturesData = [
     desc: "Precision matching based on skill and location",
   },
 ];
+export const priceListItems = [
+  "player management",
+  "Club notifications system",
+  "Create & manage matches",
+  "Player profile management",
+  "Skill-level based matchmaking",
+  "Access to web dashboard & mobile app",
+  "Upgrade anytime — no credit card required",
+];
