@@ -62,7 +62,7 @@ export const paddlePlatformCardsData = [
     id: 2,
     imageSrc: "mobile-screens",
     allowOverflow: true,
-    imageWrapper: "left-0 w-full xl:-translate-y-6 xl:-translate-y-10 md:max-w-120 lg:max-w-128.5 max-h-146 h-full overflow-visible",
+    imageWrapper: "left-0 w-full max-xl:-left-13 xl:-translate-y-5 md:max-w-120 lg:max-w-128.5 max-h-146 h-full overflow-visible",
     extraClasses: "xl:scale-160",
     subtitle: "Player",
     title: "Mobile Experience for Players",

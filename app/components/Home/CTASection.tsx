@@ -4,8 +4,8 @@ export default function CTASection() {
   return (
     <section className="max-w-7xl mx-auto max-lg:px-4 max-xxl:px-6 xxl:px-0 py-10 lg:py-28">
       <div className="flex flex-col gap-4 items-center rounded-20 overflow-hidden bg-[url('/images/players.webp')] bg-no-repeat bg-center bg-cover">
-        <div className="bg-black/60 lg:bg-black/40 py-10 lg:py-16 px-6 lg:px-64 flex flex-col items-center gap-3 lg:gap-6 w-full">
-          <h2 className="font-poppins text-white text-3xl lg:text-5xl text-center leading-120 -tracking-[1%] font-semibold">
+        <div className="bg-black/60 lg:bg-black/40 py-10 lg:py-16 px-6 lg:px-62 flex flex-col items-center gap-3 lg:gap-6  w-full">
+          <h2 className="font-poppins text-white text-3xl lg:text-5xl text-center leading-120 -tracking-[1%] font-semibold w-full">
             Ready to transform your paddle club
           </h2>
           <p className="text-white font-space-grotesk text-xl lg:text-2xl leading-150 text-center">

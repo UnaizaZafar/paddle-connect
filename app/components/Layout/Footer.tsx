@@ -44,7 +44,7 @@ export default function Footer() {
               variant="primary-colored"
             />
           </div>
-          <p className="text-xs leading-150 font-poppins text-primary">
+          <p className="text-xs leading-150 font-space-grotesk text-primary">
             By subscribing you agree to our{" "}
             <span>
               <Link
