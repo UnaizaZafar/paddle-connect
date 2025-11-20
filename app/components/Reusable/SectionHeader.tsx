@@ -7,7 +7,7 @@ type SectionHeaderProps = {
 export default function SectionHeader({
   tagText,
   heading,
-  desc
+  desc,
 }: SectionHeaderProps) {
   return (
     <>

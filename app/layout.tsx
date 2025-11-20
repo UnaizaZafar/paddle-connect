@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Space_Grotesk } from "next/font/google";
-import localFont from 'next/font/local'
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Layout/Navbar";
 import Footer from "./components/Layout/Footer";
@@ -17,8 +17,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 const vastagoGrotesk=localFont({
   variable:"--font-vastago-grotesk",
-  src: '../public/fonts/VastagoGrotesk-Bold.otf',
-})
+  src: "../public/fonts/VastagoGrotesk-Bold.otf",
+});
 export const metadata: Metadata = {
   title: "Paddle Connect",
   description: "Smart matchmaking platform for paddle clubs and players. Automate player connections, match management, and streamline court bookings",

@@ -97,8 +97,6 @@ export const user1 = [
 export const user2 = [
   <svg
     key={"user2"}
-     // width={48}
-    // height={48}
     className="size-8 lg:size-12"
     viewBox="0 0 48 48"
     fill="none"
