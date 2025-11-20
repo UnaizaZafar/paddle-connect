@@ -20,7 +20,8 @@
   --font-poppins: "Poppins", sans-serif;
   --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-vastago-grotesk: "Vastago Grotesk", sans-serif;
-
+  /* SCREEN SIZE */
+  --breakpoint-xxl: 1440px;
   /* COLORS */
   --color-primary: #090d02;
   --color-grey: #f2f2f2;

@@ -4,7 +4,7 @@ import SectionHeader from "../Reusable/SectionHeader";
 import Image from "next/image";
 export default function WhyChoosePaddleConnect() {
   return (
-    <section className="max-w-7xl mx-auto px-4 lg:px-6 2xl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
+    <section className="max-w-7xl mx-auto max-lg:px-4 max-xxl:px-6 xxl:px-0 py-10 lg:py-28 flex flex-col gap-4 items-center">
       <SectionHeader
         tagText="Value"
         heading="Why Choose Paddle Connect"

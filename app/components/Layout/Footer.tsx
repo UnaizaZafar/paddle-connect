@@ -4,7 +4,7 @@ import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";
 export default function Footer() {
   return (
-    <footer className="px-4 lg:px-6 xl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
+    <footer className="max-lg:px-4 max-xxl:px-6 xxl:px-0 py-10 lg:py-20 max-w-7xl mx-auto flex flex-col  gap-4 md:gap-7 xl:gap-12">
       <div className="flex max-lg:flex-col max-lg:gap-5 justify-between">
         <div className="flex flex-col gap-6">
           <Image
