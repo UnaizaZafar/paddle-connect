@@ -44,18 +44,16 @@ const eslintConfig = defineConfig([
       "@typescript-eslint/no-explicit-any": "warn",
       "@typescript-eslint/no-non-null-assertion": "warn",
       // Best Practices
-      "eqeqeq": ["error", "always", { null: "ignore" }],
+      eqeqeq: ["error", "always", { null: "ignore" }],
       "no-eval": "error",
       "no-implied-eval": "error",
       "no-new-wrappers": "error",
       "no-throw-literal": "error",
       "prefer-promise-reject-errors": "error",
       // Style Rules
-      "quotes": ["warn", "double", { avoidEscape: true }],
-      "semi": ["warn", "always"],
+      quotes: ["warn", "double", { avoidEscape: true }],
+      semi: ["warn", "always"],
       "comma-dangle": ["warn", "always-multiline"],
-      "indent": ["warn", 2, { SwitchCase: 1 }],
-      "max-len": ["warn", { code: 100, ignoreUrls: true, ignoreStrings: true }],
     },
   },
 ]);
