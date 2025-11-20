@@ -1,12 +1,7 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
     ".next/**",
     "out/**",
     "build/**",
@@ -14,10 +9,41 @@ const eslintConfig = defineConfig([
   ]),
   {
     rules: {
-      // Code Quality Rules
-      "no-console": ["warn", { allow: ["warn", "error"] }],
+      // ============================
+      // 🔥 HIGH PRIORITY — ERRORS
+      // ============================
       "no-debugger": "error",
-      "no-unused-vars": "off", // TypeScript handles this
+      "no-duplicate-imports": "error",
+      "no-var": "error",
+      "prefer-const": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react/jsx-no-undef": "error",
+      "react/jsx-key": "error",
+      "react/jsx-no-duplicate-props": "error",
+      eqeqeq: ["error", "always", { null: "ignore" }],
+      "no-eval": "error",
+      "no-implied-eval": "error",
+      "no-new-wrappers": "error",
+      "no-throw-literal": "error",
+      "prefer-promise-reject-errors": "error",
+
+      // TypeScript critical rules
+      "@typescript-eslint/no-explicit-any": "error", // force safer types
+      "@typescript-eslint/no-non-null-assertion": "error",
+
+      // ============================
+      // ⚠️ MEDIUM PRIORITY — WARNINGS
+      // ============================
+      "no-console": ["warn", { allow: ["warn", "error"] }],
+      "prefer-arrow-callback": "warn",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/no-unescaped-entities": "warn",
+      quotes: ["warn", "double", { avoidEscape: true }],
+      semi: ["warn", "always"],
+      "comma-dangle": ["warn", "always-multiline"],
+
+      // TS helpers
+      "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {
@@ -25,36 +51,23 @@ const eslintConfig = defineConfig([
           varsIgnorePattern: "^_",
         },
       ],
-      "no-duplicate-imports": "error",
-      "no-var": "error",
-      "prefer-const": "error",
-      "prefer-arrow-callback": "warn",
-      // React Rules
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "react/jsx-key": "error",
-      "react/jsx-no-duplicate-props": "error",
-      "react/jsx-no-undef": "error",
-      "react/jsx-uses-react": "off", // Not needed in React 17+
-      "react/jsx-uses-vars": "error",
-      "react/no-unescaped-entities": "warn",
-      "react/prop-types": "off", // Using TypeScript instead
-      // TypeScript Rules
+
+      // ============================
+      // 💤 RULES YOU DON’T NEED
+      // ============================
+      // (Keeping them OFF so they don’t bother you)
+      "max-len": "off",
+      "react/jsx-uses-react": "off",
+      "react/prop-types": "off",
       "@typescript-eslint/explicit-function-return-type": "off",
-      "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/no-non-null-assertion": "warn",
-      // Best Practices
-      eqeqeq: ["error", "always", { null: "ignore" }],
-      "no-eval": "error",
-      "no-implied-eval": "error",
-      "no-new-wrappers": "error",
-      "no-throw-literal": "error",
-      "prefer-promise-reject-errors": "error",
-      // Style Rules
-      quotes: ["warn", "double", { avoidEscape: true }],
-      semi: ["warn", "always"],
-      "comma-dangle": ["warn", "always-multiline"],
+
+      // ============================
+      // 🆕 NEXT.JS BEST PRACTICES
+      // ============================
+      "@next/next/no-img-element": "warn",         // encourage <Image/>
+      "@next/next/no-html-link-for-pages": "error", // important for routing
+      "@next/next/no-page-custom-font": "warn",     // enforce next/font
+      "@next/next/google-font-display": "warn",
     },
   },
 ]);
-export default eslintConfig;
