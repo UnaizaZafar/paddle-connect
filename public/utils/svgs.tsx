@@ -520,3 +520,306 @@ export const error_warning_fill = [
     />
   </svg>,
 ];
+export const signupUser = [
+  <svg
+    key={"sign-up-user"}
+    width={88}
+    height={88}
+    viewBox="0 0 88 88"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      fill="url(#paint0_linear_145_9684)"
+    />
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      stroke="url(#paint1_linear_145_9684)"
+    />
+    <g filter="url(#filter0_d_145_9684)">
+      <rect x={16} y={16} width={56} height={56} rx={28} fill="white" />
+      <rect
+        x="16.5"
+        y="16.5"
+        width={55}
+        height={55}
+        rx="27.5"
+        stroke="#E2E4E9"
+      />
+      <path
+        d="M46.0996 46.3638V48.5583C45.1493 48.2223 44.1322 48.1193 43.1338 48.2578C42.1354 48.3963 41.1848 48.7724 40.3618 49.3544C39.5389 49.9365 38.8676 50.7075 38.4043 51.6027C37.9411 52.4979 37.6994 53.4912 37.6996 54.4992L35.5996 54.4982C35.5993 53.216 35.8925 51.9508 36.4567 50.7994C37.021 49.6481 37.8413 48.6412 38.8548 47.8559C39.8684 47.0706 41.0482 46.5278 42.304 46.2689C43.5598 46.0101 44.8582 46.0422 46.0996 46.3628V46.3638ZM43.9996 45.0492C40.5189 45.0492 37.6996 42.23 37.6996 38.7492C37.6996 35.2685 40.5189 32.4492 43.9996 32.4492C47.4804 32.4492 50.2996 35.2685 50.2996 38.7492C50.2996 42.23 47.4804 45.0492 43.9996 45.0492ZM43.9996 42.9492C46.3201 42.9492 48.1996 41.0697 48.1996 38.7492C48.1996 36.4287 46.3201 34.5492 43.9996 34.5492C41.6791 34.5492 39.7996 36.4287 39.7996 38.7492C39.7996 41.0697 41.6791 42.9492 43.9996 42.9492ZM50.2996 49.2492V46.0992H52.3996V49.2492H55.5496V51.3492H52.3996V54.4992H50.2996V51.3492H47.1496V49.2492H50.2996Z"
+        fill="#525866"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_145_9684"
+        x={12}
+        y={14}
+        width={64}
+        height={64}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={2} />
+        <feGaussianBlur stdDeviation={2} />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.105882 0 0 0 0 0.109804 0 0 0 0 0.113725 0 0 0 0.04 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_145_9684"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_145_9684"
+          result="shape"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_145_9684"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" stopOpacity="0.48" />
+        <stop offset={1} stopColor="#F7F8F8" stopOpacity={0} />
+        <stop offset={1} stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_145_9684"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" />
+        <stop offset="0.765625" stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>,
+];
+export const verify_account = [
+  <svg
+    key={"verify_account"}
+    width={88}
+    height={88}
+    viewBox="0 0 88 88"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      fill="url(#paint0_linear_145_9714)"
+    />
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      stroke="url(#paint1_linear_145_9714)"
+    />
+    <g filter="url(#filter0_d_145_9714)">
+      <rect x={16} y={16} width={56} height={56} rx={28} fill="white" />
+      <rect
+        x="16.5"
+        y="16.5"
+        width={55}
+        height={55}
+        rx="27.5"
+        stroke="#E2E4E9"
+      />
+      <path
+        d="M54.5 45.4088C53.3783 45.0115 52.167 44.94 51.0064 45.2026C49.8457 45.4652 48.7832 46.0511 47.9417 46.8925C47.1003 47.734 46.5144 48.7965 46.2518 49.9572C45.9892 51.1178 46.0607 52.3291 46.458 53.4508H34.55C34.2715 53.4508 34.0045 53.3402 33.8075 53.1432C33.6106 52.9463 33.5 52.6793 33.5 52.4008V35.6008C33.5 35.3223 33.6106 35.0552 33.8075 34.8583C34.0045 34.6614 34.2715 34.5508 34.55 34.5508H53.45C53.7285 34.5508 53.9955 34.6614 54.1925 34.8583C54.3894 35.0552 54.5 35.3223 54.5 35.6008V45.4088ZM44.063 43.6679L37.3304 37.9507L35.9706 39.5509L44.0766 46.4336L52.0367 39.5456L50.6633 37.957L44.064 43.6679H44.063ZM51.35 54.5008L47.6372 50.788L49.1229 49.3033L51.35 51.5314L55.0628 47.8186L56.5475 49.3033L51.35 54.5008Z"
+        fill="#525866"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_145_9714"
+        x={12}
+        y={14}
+        width={64}
+        height={64}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={2} />
+        <feGaussianBlur stdDeviation={2} />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.105882 0 0 0 0 0.109804 0 0 0 0 0.113725 0 0 0 0.04 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_145_9714"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_145_9714"
+          result="shape"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_145_9714"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" stopOpacity="0.48" />
+        <stop offset={1} stopColor="#F7F8F8" stopOpacity={0} />
+        <stop offset={1} stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_145_9714"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" />
+        <stop offset="0.765625" stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>,
+];
+export const reset_password = [
+  <svg
+    key={"reset_password"}
+    width={88}
+    height={88}
+    viewBox="0 0 88 88"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      fill="url(#paint0_linear_145_9764)"
+    />
+    <rect
+      x="0.5"
+      y="0.5"
+      width={87}
+      height={87}
+      rx="43.5"
+      stroke="url(#paint1_linear_145_9764)"
+    />
+    <g filter="url(#filter0_d_145_9764)">
+      <rect x={16} y={16} width={56} height={56} rx={28} fill="white" />
+      <rect
+        x="16.5"
+        y="16.5"
+        width={55}
+        height={55}
+        rx="27.5"
+        stroke="#E2E4E9"
+      />
+      <path
+        d="M44 54.5C38.2009 54.5 33.5 49.7991 33.5 44C33.5 38.2009 38.2009 33.5 44 33.5C49.7991 33.5 54.5 38.2009 54.5 44C54.5 49.7991 49.7991 54.5 44 54.5ZM42.95 44.8316V48.2H45.05V44.8316C45.6027 44.5904 46.0555 44.1662 46.3323 43.6304C46.609 43.0946 46.6928 42.4798 46.5696 41.8894C46.4464 41.2991 46.1237 40.7692 45.6557 40.3888C45.1877 40.0084 44.6031 39.8007 44 39.8007C43.3969 39.8007 42.8123 40.0084 42.3443 40.3888C41.8763 40.7692 41.5536 41.2991 41.4304 41.8894C41.3072 42.4798 41.391 43.0946 41.6677 43.6304C41.9445 44.1662 42.3973 44.5904 42.95 44.8316Z"
+        fill="#525866"
+      />
+    </g>
+    <defs>
+      <filter
+        id="filter0_d_145_9764"
+        x={12}
+        y={14}
+        width={64}
+        height={64}
+        filterUnits="userSpaceOnUse"
+        colorInterpolationFilters="sRGB"
+      >
+        <feFlood floodOpacity={0} result="BackgroundImageFix" />
+        <feColorMatrix
+          in="SourceAlpha"
+          type="matrix"
+          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+          result="hardAlpha"
+        />
+        <feOffset dy={2} />
+        <feGaussianBlur stdDeviation={2} />
+        <feColorMatrix
+          type="matrix"
+          values="0 0 0 0 0.105882 0 0 0 0 0.109804 0 0 0 0 0.113725 0 0 0 0.04 0"
+        />
+        <feBlend
+          mode="normal"
+          in2="BackgroundImageFix"
+          result="effect1_dropShadow_145_9764"
+        />
+        <feBlend
+          mode="normal"
+          in="SourceGraphic"
+          in2="effect1_dropShadow_145_9764"
+          result="shape"
+        />
+      </filter>
+      <linearGradient
+        id="paint0_linear_145_9764"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" stopOpacity="0.48" />
+        <stop offset={1} stopColor="#F7F8F8" stopOpacity={0} />
+        <stop offset={1} stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+      <linearGradient
+        id="paint1_linear_145_9764"
+        x1={44}
+        y1={0}
+        x2={44}
+        y2={88}
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#E4E5E7" />
+        <stop offset="0.765625" stopColor="#E4E5E7" stopOpacity={0} />
+      </linearGradient>
+    </defs>
+  </svg>,
+];

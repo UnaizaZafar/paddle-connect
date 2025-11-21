@@ -12,7 +12,9 @@ export default function LayoutWrapper({
   const pathname = usePathname();
   return (
     <>
-      {pathname === "/login" || pathname === "/sign-up" ? (
+      {pathname === "/login" ||
+      pathname === "/sign-up" ||
+      pathname === "/verify-account" ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-[1352px] mx-auto py-6 h-full">
           <div className="flex justify-between">
             <Image

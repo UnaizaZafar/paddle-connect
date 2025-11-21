@@ -9,11 +9,13 @@ import {
   error_warning_fill,
   eye_line,
   lock,
+  signupUser,
   user_line,
 } from "@/public/utils/svgs";
 export default function SignupPage() {
   return (
     <CardDemo
+      cardIcon={signupUser}
       title="Create a new account"
       subtitle="Enter your details to register."
     >

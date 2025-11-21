@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { emailIcon, eye_line, lock } from "@/public/utils/svgs";
+import { emailIcon, eye_line, lock, loginUser } from "@/public/utils/svgs";
 export default function LoginPage() {
   return (
     <CardDemo
+      cardIcon={loginUser}
       title="Login to your account"
       subtitle="Enter your details to login."
     >
