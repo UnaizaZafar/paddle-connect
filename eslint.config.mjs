@@ -4,12 +4,7 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
   {
     rules: {
       // ============================
@@ -42,8 +37,10 @@ const eslintConfig = defineConfig([
       "react-hooks/exhaustive-deps": "warn",
       "react/no-unescaped-entities": "warn",
       quotes: ["warn", "double", { avoidEscape: true }],
-      semi: ["warn", "always"],
-      "comma-dangle": ["warn", "always-multiline"],
+      semi: "off",
+      // semi: ["warn", "always"],
+      // "comma-dangle": ["warn", "always-multiline"],
+      "comma-dangle": "off",
 
       // TS helpers
       "no-unused-vars": "off",
@@ -67,9 +64,9 @@ const eslintConfig = defineConfig([
       // ============================
       // 🆕 NEXT.JS BEST PRACTICES
       // ============================
-      "@next/next/no-img-element": "warn",         // encourage <Image/>
+      "@next/next/no-img-element": "warn", // encourage <Image/>
       "@next/next/no-html-link-for-pages": "error", // important for routing
-      "@next/next/no-page-custom-font": "warn",     // enforce next/font
+      "@next/next/no-page-custom-font": "warn", // enforce next/font
       "@next/next/google-font-display": "warn",
     },
   },
