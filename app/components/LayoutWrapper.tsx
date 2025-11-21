@@ -4,6 +4,7 @@ import Footer from "./Layout/Footer";
 import Navbar from "./Layout/Navbar";
 import Image from "next/image";
 import { ModeToggle } from "./Authentication/ModeToggle";
+import Link from "next/link";
 export default function LayoutWrapper({
   children,
 }: {
@@ -14,15 +15,19 @@ export default function LayoutWrapper({
     <>
       {pathname === "/login" ||
       pathname === "/sign-up" ||
-      pathname === "/verify-account" ? (
+      pathname === "/verify-account" ||
+      pathname === "/reset-password" ||
+      pathname === "/change-password" ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-[1352px] mx-auto py-6 h-full">
           <div className="flex justify-between">
-            <Image
-              src={"/images/logo.webp"}
-              alt="Paddle Connect Logo"
-              height={39}
-              width={214}
-            />
+            <Link href={"/"}>
+              <Image
+                src={"/images/logo.webp"}
+                alt="Paddle Connect Logo"
+                height={39}
+                width={214}
+              />
+            </Link>
             <ModeToggle />
           </div>
           <div className="flex justify-center items-center bg-[url(/images/pattern.webp)] bg-no-repeat bg-cover bg-center h-full">

@@ -3,33 +3,34 @@ import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { emailIcon, eye_line, lock, loginUser } from "@/public/utils/svgs";
-export default function LoginPage() {
+import { eye_line, lock, reset_password } from "@/public/utils/svgs";
+export default function SignupPage() {
   return (
     <CardDemo
-      cardIcon={loginUser}
-      title="Login to your account"
-      subtitle="Enter your details to login."
+      showFullLine={true}
+      cardIcon={reset_password}
+      title="Change Password"
+      subtitle="Fill all the requried fields"
     >
       <CardContent>
-        <form>
+        <form className="flex flex-col gap-1">
           <div className="flex flex-col gap-3">
             <div className="grid gap-1">
-              <Label htmlFor="email" className="dark:text-soft-200 text-main-900">
-                Email Address<span className="text-primary font-medium">*</span>{" "}
+              <Label htmlFor="email">
+                Password<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
-                id="email"
-                type="email"
-                placeholder="hello@alignui.com"
-                icon={emailIcon}
+                id="password"
+                type="password"
                 required
-                className="text-soft-400"
+                placeholder="••••••••••"
+                icon={lock}
+                iconRight={eye_line}
               />
             </div>
             <div className="grid gap-1">
-              <Label htmlFor="email" className="dark:text-soft-200 text-main-900">
-                Password<span className="text-primary font-medium">*</span>{" "}
+              <Label htmlFor="email">
+                Confirm Password<span className="text-primary">*</span>{" "}
               </Label>
               <Input
                 id="password"
@@ -43,12 +44,7 @@ export default function LoginPage() {
           </div>
         </form>
       </CardContent>
-      <a
-        href="#"
-        className="ml-auto inline-block text-sm underline-offset-1 underline place-self-end dark:text-sub-400 text-sub-500 dark:hover:text-sub-500 hover:text-black transition duration-200 tracking-[-0.6%]"
-      >
-        Forgot password?
-      </a>
+
       <CardFooter className="flex-col gap-2">
         <Button
           size={"xl"}
@@ -56,7 +52,7 @@ export default function LoginPage() {
           variant={"submit"}
           className="w-full p-3.5 leading-5 font-semibold"
         >
-          Login
+          Change Password
         </Button>
       </CardFooter>
     </CardDemo>

@@ -12,7 +12,7 @@ function Input({
   className,
   type,
   iconRight,
-  // ...props
+  ...props
 }: 
 iconProps) {
   const paddingClass = icon ? "pl-10" : "pl-3";
@@ -41,7 +41,7 @@ iconProps) {
           paddingClass,
           className
         )}
-        // {...props}
+        {...props}
       />
       {iconRight && (
         <span

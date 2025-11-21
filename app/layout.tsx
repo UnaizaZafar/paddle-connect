@@ -25,6 +25,10 @@ const vastagoGrotesk = localFont({
   variable: "--font-vastago-grotesk",
   src: "../public/fonts/VastagoGrotesk-Bold.otf",
 });
+const interDisplay = localFont({
+  variable: "--font-inter-display",
+  src: "../public/fonts/InterVariable.ttf",
+});
 export const metadata: Metadata = {
   title: "Paddle Connect",
   description:
@@ -39,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${spaceGrotesk.variable} ${vastagoGrotesk.variable} ${inter.variable} antialiased relative`}
+        className={`${poppins.variable} ${spaceGrotesk.variable} ${vastagoGrotesk.variable} ${interDisplay.variable} antialiased relative`}
       >
         <ThemeProvider
           attribute="class"

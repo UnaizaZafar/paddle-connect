@@ -22,9 +22,9 @@ export default function SignupPage() {
       <CardContent>
         <form className="flex flex-col gap-1">
           <div className="flex flex-col gap-3">
-            <div className="grid gap-2">
-              <Label htmlFor="email">
-                Full Name<span className="text-primary">*</span>{" "}
+            <div className="grid gap-1">
+              <Label className="dark:text-soft-200 text-main-900 font-inter" htmlFor="email">
+                Full Name<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
                 id="name"
@@ -35,9 +35,9 @@ export default function SignupPage() {
                 className="text-soft-400"
               />
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">
-                Email Address<span className="text-primary">*</span>{" "}
+            <div className="grid gap-1">
+              <Label className="dark:text-soft-200 text-main-900 font-inter" htmlFor="email">
+                Email Address<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
                 id="email"
@@ -48,9 +48,9 @@ export default function SignupPage() {
                 className="text-soft-400"
               />
             </div>
-            <div className="grid gap-2">
-              <Label htmlFor="email">
-                Password<span className="text-primary">*</span>{" "}
+            <div className="grid gap-1">
+              <Label className="dark:text-soft-200 text-main-900 font-inter" htmlFor="email">
+                Password<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
                 id="password"
@@ -71,16 +71,17 @@ export default function SignupPage() {
 
       <CardFooter className="flex-col gap-2">
         <Button
+          size={"xl"}
           type="submit"
           variant={"submit"}
-          className="w-full p-3.5 leading-5"
+          className="w-full p-3.5 leading-5 font-semibold"
         >
           Register
         </Button>
       </CardFooter>
       <p className="font-inter tracking-[-0.6%] text-sub-500 text-sm place-self-center leading-5">
         Already have an account?{" "}
-        <span className="dark:text-sub-400 text-black hover:underline ">
+        <span className="dark:text-sub-400 text-charcoal-black hover:underline ">
           <Link href="/login">Login</Link>
         </span>
       </p>

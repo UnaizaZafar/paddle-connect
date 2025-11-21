@@ -47,11 +47,20 @@
   font-display: swap;
   src: url("/fonts/VastagoGrotesk-Bold.otf") format("otf");
 }
+@font-face {
+  font-family: Inter Display;
+  font-style: normal;
+  font-weight: 200 300 400 500 600 700 800;
+  font-display: swap;
+  src: url("/fonts/InterVariable.ttf") format("ttf");
+}
 @theme {
   --font-inter: "Inter", sans-serif;
   --font-poppins: "Poppins", sans-serif;
   --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-vastago-grotesk: "Vastago Grotesk", sans-serif;
+  --font-inter-display: "Inter Display", sans-serif;
+
   /* SCREEN SIZE */
   --breakpoint-xxl: 1440px;
   /* COLORS */
@@ -60,6 +69,7 @@
   --color-main-900: #0a0d14;
   --color-text: #090d02;
   --color-grey: #f2f2f2;
+  --color-charcoal-black:#1E1E1E;
   --color-sub-400:#747984;
   --color-sub-500: #525866;
   --color-soft-200: #e2e4e9;
