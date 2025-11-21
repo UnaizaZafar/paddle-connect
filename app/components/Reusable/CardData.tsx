@@ -26,13 +26,13 @@ export default function CardData({
     >
       <p className="font-space-grotesk font-bold leading-150">{subtitle}</p>
       <h5
-        className={`font-poppins ${sizeVariantClasses[size]} text-primary leading-120`}
+        className={`font-poppins ${sizeVariantClasses[size]} text-text leading-120`}
       >
         {title}
       </h5>
       {description && (
         <p
-          className={`font-space-grotesk leading-150 text-primary ${
+          className={`font-space-grotesk leading-150 text-text ${
             size === "large" && "lg:pt-4"
           }`}
         >

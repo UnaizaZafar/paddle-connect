@@ -25,11 +25,11 @@ export default function Navbar() {
               className="font-space-grotesk leading-150 text-black group relative"
             >
               {item.name}
-              <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300" />
+              <div className="w-0 group-hover:w-full h-0.5 bg-text/50 translate-x transition-all duration-300" />
             </Link>
           ))}
         </div>
-        <CTAButton text="Start Free Trial" variant="primary-black" />
+        <CTAButton text="Login" variant="primary-black" showArrow={false} link={"/login"}/>
       </nav>
       <HamburgerMenu />
     </>
@@ -100,14 +100,14 @@ const HamburgerMenu = () => {
             <Link
               key={item.id}
               href={item.link}
-              className="font-space-grotesk leading-150 text-black p-4 border-b border-b-primary/20"
+              className="font-space-grotesk leading-150 text-black p-4 border-b border-b-text/20"
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        <CTAButton text="Start Free Trial" variant="primary-black" />
+        <CTAButton text="Login" variant="primary-black" showArrow={false} link={"/login"}/>
       </div>
     </nav>
   );

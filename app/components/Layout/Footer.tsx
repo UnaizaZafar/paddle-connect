@@ -23,7 +23,7 @@ export default function Footer() {
                 className="font-space-grotesk font-bold text-sm relative group"
               >
                 {item.name}
-                <div className="w-0 group-hover:w-full h-0.5 bg-primary/50 translate-x transition-all duration-300" />
+                <div className="w-0 group-hover:w-full h-0.5 bg-text/50 translate-x transition-all duration-300" />
               </Link>
             ))}
           </div>
@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="flex gap-4">
             <input
               placeholder="Enter your email"
-              className="rounded-xl border border-primary/15 py-1 lg:py-2 px-2 lg:px-3 bg-primary/5 font-space-grotesk leading-150 text-primary/60 w-2/3 md:min-w-93.5"
+              className="rounded-xl border border-text/15 py-1 lg:py-2 px-2 lg:px-3 bg-text/5 font-space-grotesk leading-150 text-text/60 w-2/3 md:min-w-93.5"
             />
             <CTAButton
               showArrow={false}
@@ -44,7 +44,7 @@ export default function Footer() {
               variant="primary-colored"
             />
           </div>
-          <p className="text-xs leading-150 font-space-grotesk text-primary">
+          <p className="text-xs leading-150 font-space-grotesk text-text">
             By subscribing you agree to our{" "}
             <span>
               <Link
@@ -60,22 +60,22 @@ export default function Footer() {
       <h1 className="text-40 md:text-7xl lg:text-8xl xl:text-155 text-black md:leading-150 font-vastago-grotesk max-xl:text-center">
         Paddle Connect
       </h1>
-      <div className="border-t border-primary/15 pt-8 flex max-md:flex-col max-md:gap-2 justify-between">
+      <div className="border-t border-text/15 pt-8 flex max-md:flex-col max-md:gap-2 justify-between">
         <div className="flex gap-4">
           <Link
             href={"/"}
-            className="underline font-space-grotesk text-sm leading-150 text-primary hover:font-medium transition-all duration-150"
+            className="underline font-space-grotesk text-sm leading-150 text-text hover:font-medium transition-all duration-150"
           >
             Privacy policy
           </Link>
           <Link
             href={"/"}
-            className="underline font-space-grotesk text-sm leading-150 text-primary hover:font-medium transition-all duration-150"
+            className="underline font-space-grotesk text-sm leading-150 text-text hover:font-medium transition-all duration-150"
           >
             Terms of service
           </Link>
         </div>
-        <p className="font-space-grotesk text-sm text-primary">
+        <p className="font-space-grotesk text-sm text-text">
           © 2025 Paddle Connect. All rights reserved.
         </p>
       </div>

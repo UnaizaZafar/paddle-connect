@@ -18,7 +18,7 @@ export default function Card({
   padding,
 }: CardProps) {
   return (
-    <div className="group flex rounded-20 overflow-hidden border border-primary/15 first:row-span-2 first:flex-col">
+    <div className="group flex rounded-20 overflow-hidden border border-text/15 first:row-span-2 first:flex-col">
       <Image
         src={`/images/${imageSrc}.webp`}
         alt={title}
