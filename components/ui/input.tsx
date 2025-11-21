@@ -1,14 +1,20 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-
+type iconProps = {
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  className?: string;
+  type?: string;
+};
 function Input({
   icon,
   className,
   type,
   iconRight,
-  ...props
-}: React.ComponentProps<"input">) {
+  // ...props
+}: 
+iconProps) {
   const paddingClass = icon ? "pl-10" : "pl-3";
 
   return (
@@ -35,7 +41,7 @@ function Input({
           paddingClass,
           className
         )}
-        {...props}
+        // {...props}
       />
       {iconRight && (
         <span
