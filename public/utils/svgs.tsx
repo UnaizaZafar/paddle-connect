@@ -975,7 +975,6 @@ export const gym_logo = [
             height="75.2003"
           >
             <div
-              xmlns="http://www.w3.org/1999/xhtml"
               style={{
                 backdropFilter: "blur(3.2px)",
                 clipPath: "url(#bgblur_2_145_9636_clip_path)",
@@ -1021,7 +1020,6 @@ export const gym_logo = [
           />
           <foreignObject x="19.6" y="1.00078" width="43.1994" height="88.0004">
             <div
-              xmlns="http://www.w3.org/1999/xhtml"
               style={{
                 backdropFilter: "blur(3.2px)",
                 clipPath: "url(#bgblur_3_145_9636_clip_path)",

@@ -34,7 +34,7 @@ export default function LayoutWrapper({
             {pathname.includes("onboarding") ? (
               <div className="flex gap-2 items-center">
                 <p className="font-inter text-sm text-center leading-5 dark:text-sub-400 text-sub-500 tracking-[-0.6%]">
-                  Don't have an account?{" "}
+                  Don&apos;t have an account?{" "}
                   <Link
                     href={"/"}
                     className="underline font-medium dark:text-sub-400 hover:text-sub-500 text-[#1e1e1e]"
