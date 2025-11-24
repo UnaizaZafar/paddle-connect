@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${poppins.variable} ${spaceGrotesk.variable} ${vastagoGrotesk.variable} ${interDisplay.variable} antialiased relative`}
+        className={`${poppins.variable} ${spaceGrotesk.variable} ${vastagoGrotesk.variable} ${interDisplay.variable} ${inter.variable} antialiased relative`}
       >
         <ThemeProvider
           attribute="class"

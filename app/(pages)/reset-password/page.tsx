@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { CardDemo } from "@/app/components/Authentication/CardDemo";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
