@@ -11,13 +11,16 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const createAccountLinks =
+    pathname === "/login" ||
+    pathname === "/sign-up" ||
+    pathname === "/verify-account" ||
+    pathname === "/reset-password" ||
+    pathname === "/change-password" ||
+    pathname === "/onboarding";
   return (
     <>
-      {pathname === "/login" ||
-      pathname === "/sign-up" ||
-      pathname === "/verify-account" ||
-      pathname === "/reset-password" ||
-      pathname === "/change-password" ? (
+      {createAccountLinks ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-[1352px] mx-auto py-6 h-full">
           <div className="flex justify-between">
             <Link href={"/"}>
@@ -28,7 +31,22 @@ export default function LayoutWrapper({
                 width={214}
               />
             </Link>
-            <ModeToggle />
+            {pathname.includes("onboarding") ? (
+              <div className="flex gap-2 items-center">
+                <p className="font-inter text-sm text-center leading-5 dark:text-sub-400 text-sub-500 tracking-[-0.6%]">
+                  Don't have an account?{" "}
+                  <Link
+                    href={"/"}
+                    className="underline font-medium dark:text-sub-400 hover:text-sub-500 text-[#1e1e1e]"
+                  >
+                    Register
+                  </Link>{" "}
+                </p>
+                <ModeToggle />
+              </div>
+            ) : (
+              <ModeToggle />
+            )}
           </div>
           <div className="flex justify-center items-center bg-[url(/images/pattern.webp)] bg-no-repeat bg-cover bg-center h-full">
             {children}

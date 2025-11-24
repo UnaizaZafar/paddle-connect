@@ -36,10 +36,10 @@ iconProps) {
         data-slot="input"
         className={cn(
           // Base styles for the shadcn-like input appearance
-          "file:text-foreground placeholder:text-soft-400 selection:bg-blue-500 selection:text-white dark:bg-gray-100/20 h-10 w-full min-w-0 rounded-lg border border-soft-200 bg-white py-2.5 pr-3 text-base shadow-x-small transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+          "file:text-foreground placeholder:text-soft-400 selection:bg-blue-500 selection:text-white dark:bg-input/30 h-10 w-full min-w-0 rounded-lg border border-soft-200 dark:border-sub-500 bg-white py-2.5 pr-3  transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
 
           // Focus and Error states
-          "focus-visible:border-blue-500 focus-visible:ring-blue-500/50 focus-visible:ring-[3px]",
+          // "focus-visible:border-blue-500 focus-visible:ring-blue-500/50 focus-visible:ring-[3px]",
           "aria-invalid:ring-red-400/20 dark:aria-invalid:ring-red-400/40 aria-invalid:border-red-500",
           paddingClass,
           className

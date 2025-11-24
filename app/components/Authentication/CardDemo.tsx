@@ -21,7 +21,7 @@ export function CardDemo({
   extraClasses
 }: AuthenticationCardProps) {
   return (
-    <Card className={`w-full max-w-110 ${extraClasses}`}>
+    <Card className={`w-full max-w-110 gap-6 ${extraClasses}`}>
       <CardHeader>
         <CardTitle>{cardIcon}</CardTitle>
         <div className="flex flex-col gap-1">

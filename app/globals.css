@@ -74,11 +74,15 @@
   --color-sub-500: #525866;
   --color-soft-200: #e2e4e9;
   --color-soft-400: #868c98;
+  --color-base:#DF1C41;
   /* Text */
   --text-40: 40px;
   --text-56: 56px;
   --text-64: 64px;
   --text-155: 155px;
+
+  /* Tracking */
+  --tracking-tightest:-0.6%
 
   /* LINE HEIGHT */
   --leading-120: 120%;
@@ -89,6 +93,9 @@
   --radius-20: 20px;
   /* shadow */
   --shadow-x-small: 0px 1px 2px 0px rgba(228, 229, 231, 0.75);
+  --shadow-x-red: 0px 1px 2px 0px rgba(233, 53, 53, 0.08);
+  --shadow-custom-card: 0px 16px 32px -12px rgba(88, 92, 95, 0.1);
+
 }
 @media (prefers-color-scheme: dark) {
   :root {
