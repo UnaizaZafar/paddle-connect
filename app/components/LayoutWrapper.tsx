@@ -17,11 +17,12 @@ export default function LayoutWrapper({
     pathname === "/verify-account" ||
     pathname === "/reset-password" ||
     pathname === "/change-password" ||
-    pathname === "/onboarding";
+    pathname === "/onboarding" ||
+    pathname === "/complete-subscription";
   return (
     <>
       {createAccountLinks ? (
-        <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-[1352px] mx-auto py-6 h-full">
+        <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-338 mx-auto mt-6 mb-8 h-full">
           <div className="flex justify-between">
             <Link href={"/"}>
               <Image
