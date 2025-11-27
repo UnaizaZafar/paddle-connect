@@ -1,3 +1,4 @@
+"use client"
 import { InputGroupDropdown } from "@/app/components/Authentication/InputGroup";
 import { SelectDemo } from "@/app/components/Authentication/SelectField";
 import { Button } from "@/components/ui/button";
@@ -9,13 +10,29 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { deleteCookie } from "@/lib/cookies";
 import { gym_logo, gym_racket } from "@/public/utils/svgs";
 export default function OnboardingPage() {
+  const router = useRouter();
+  const handleLogout = () => {
+    // Clear localStorage
+    localStorage.removeItem("token");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("user");
+    // Clear all cookies
+    deleteCookie("token");
+    deleteCookie("authData");
+    deleteCookie("loginCreds");
+    // Redirect to login
+    router.replace("/login");
+  };
   return (
     <Card className="w-full max-w-126 shadow-custom-card">
-      <CardHeader className="justify-start w-full">
+      <CardHeader className="flex justify-between items-center">
+        {/* <CardHeader className="justify-start w-full"> */}
         <CardDescription className="pl-5 pr-4 py-4 flex gap-4 items-center ">
           {gym_racket}
           <div className="flex flex-col gap-1 items-start">
@@ -27,6 +44,15 @@ export default function OnboardingPage() {
             </p>
           </div>
         </CardDescription>
+        {/* temporary */}
+        <Button
+          onClick={handleLogout}
+          size={"xl"}
+          variant="submit"
+          className="w-max py-3.5 text-sm font-semibold tracking-tightest bg-black hover:bg-black/80 text-white"
+        >
+          Logout
+        </Button>
       </CardHeader>
       <CardContent className="p-5 border-y dark:border-sub-400 border-soft-200 w-full flex flex-col gap-5">
         <div className="flex gap-5 items-start w-full">
@@ -54,7 +80,10 @@ export default function OnboardingPage() {
         <form>
           <div className="flex flex-col gap-5">
             <div className="grid gap-1">
-              <Label className="leading-5 dark:text-soft-400 text-main-900" htmlFor="name">
+              <Label
+                className="leading-5 dark:text-soft-400 text-main-900"
+                htmlFor="name"
+              >
                 Gym Name<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
@@ -66,7 +95,10 @@ export default function OnboardingPage() {
               />
             </div>
             <div className="grid gap-1">
-              <Label className="leading-5 dark:text-soft-400 text-main-900" htmlFor="address">
+              <Label
+                className="leading-5 dark:text-soft-400 text-main-900"
+                htmlFor="address"
+              >
                 Gym Address/Location
                 <span className="text-primary font-medium">*</span>{" "}
               </Label>
@@ -79,16 +111,22 @@ export default function OnboardingPage() {
               />
             </div>
             <div className="grid gap-1">
-              <Label className="leading-5 dark:text-soft-400 text-main-900" htmlFor="city">
+              <Label
+                className="leading-5 dark:text-soft-400 text-main-900"
+                htmlFor="city"
+              >
                 City<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <SelectDemo />
             </div>
             <div className="grid gap-1">
-              <Label className="leading-5 dark:text-soft-400 text-main-900" htmlFor="number">
+              <Label
+                className="leading-5 dark:text-soft-400 text-main-900"
+                htmlFor="number"
+              >
                 Phone number<span className="text-primary font-medium">*</span>{" "}
               </Label>
-              <InputGroupDropdown/>
+              <InputGroupDropdown />
             </div>
           </div>
         </form>

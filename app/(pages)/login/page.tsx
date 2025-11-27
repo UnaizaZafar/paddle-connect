@@ -17,7 +17,6 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     loginMutation.mutate(form);
-    console.log("Form submitted", form);
   };
   return (
     <CardDemo

@@ -6,6 +6,9 @@ import Navbar from "./Layout/Navbar";
 import Image from "next/image";
 import { ModeToggle } from "./Authentication/ModeToggle";
 import Link from "next/link";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 export default function LayoutWrapper({
   children,
 }: {
@@ -52,10 +55,11 @@ export default function LayoutWrapper({
               <ModeToggle />
             )}
           </div>
+          <ToastContainer position="top-right" autoClose={2500} />
           <div className="flex justify-center items-center bg-[url(/images/pattern.webp)] bg-no-repeat bg-cover bg-center h-full">
             {children}
           </div>
-          <p className="text-sub-500 font-inter text-sm leading-5 tracking-[-0.6%]">
+          <p className="text-sub-500 font-inter text-sm leading-5 tracking-tightest">
             © 2025 Paddle Art
           </p>
         </div>
