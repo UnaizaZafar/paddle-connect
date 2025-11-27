@@ -41,7 +41,6 @@ export function useLogin() {
     },
     onError: (error) => {
       const status = error?.response?.status || "Login failed";
-      console.log("status", error);
       if (status === 404) {
         toast.error("User does'nt Exist");
         router.replace("/sign-up");

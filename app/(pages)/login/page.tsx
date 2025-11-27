@@ -14,8 +14,27 @@ export default function LoginPage() {
     password: "",
   });
   const loginMutation = useLogin();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const pwd = form.password;
+    const mail = form.email;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=[\]{};':"\\|,.<>/?-]).{8,}$/;
+    if (!passRegex.test(pwd)) {
+      const passError = document.getElementById("password-error");
+      if (passError) {
+        passError.innerHTML =
+          "Password must contain at least 8 characters and requires at least one uppercase letter, one lowercase letter, one digit, and one special character.";
+      }
+    }
+    if (!emailRegex.test(mail)) {
+      const emailError = document.getElementById("email-error");
+      if (emailError) {
+        emailError.innerHTML = "Incorrect email format";
+      }
+    }
     loginMutation.mutate(form);
   };
   return (
@@ -46,6 +65,7 @@ export default function LoginPage() {
                 required
                 className="text-soft-400"
               />
+              <p id="email-error" className="text-xs text-red-base" />
             </div>
             <div className="grid gap-1">
               <Label
@@ -62,10 +82,11 @@ export default function LoginPage() {
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setForm({ ...form, password: e.target.value })
                 }
-                placeholder="••••••••••"
+                placeholder="••••••••"
                 icon={lock}
                 iconRight={eye_line}
               />
+              <p id="password-error" className="text-xs text-red-base" />
             </div>
           </div>
           <a
