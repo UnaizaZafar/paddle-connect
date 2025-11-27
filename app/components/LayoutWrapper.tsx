@@ -1,5 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Footer from "./Layout/Footer";
 import Navbar from "./Layout/Navbar";
 import Image from "next/image";
@@ -19,8 +20,10 @@ export default function LayoutWrapper({
     pathname === "/change-password" ||
     pathname === "/onboarding" ||
     pathname === "/complete-subscription";
+
+  const queryClient = new QueryClient();
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       {createAccountLinks ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-338 mx-auto mt-6 mb-8 h-full">
           <div className="flex justify-between">
@@ -63,6 +66,6 @@ export default function LayoutWrapper({
           <Footer />
         </>
       )}
-    </>
+    </QueryClientProvider>
   );
 }

@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <div className="bg-[url(/images/hero-image.webp)] bg-no-repeat bg-cover bg-bottom">
       <div className="bg-black/50">
-        <div className="min-h-screen h-auto flex flex-col gap-4 lg:gap-6 justify-center items-center  max-w-[1032px] mx-auto relative max-lg:px-4">
+        <div className="min-h-screen h-auto flex flex-col gap-4 lg:gap-6 justify-center items-center  max-w-258 mx-auto relative max-lg:px-4">
           <h1 className="font-bold  font-poppins text-3xl lg:text-5xl tracking-[-1%] xl:text-64 leading-120 text-white text-center">
             Smart Matchmaking for Paddle Clubs and Players
           </h1>
