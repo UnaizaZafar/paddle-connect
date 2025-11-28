@@ -1,8 +1,14 @@
 import {
   allMatch,
   approval,
+  levels,
+  players,
   precision_manufacturing,
+  racket,
   serviceToolbox,
+  setting,
+  trophy_icon,
+  window_icon,
 } from "./svgs";
 
 export const menu = [
@@ -103,4 +109,39 @@ export const priceListItems = [
   "Skill-level based matchmaking",
   "Access to web dashboard & mobile app",
   "Upgrade anytime — no credit card required",
+];
+
+export const sideBarMenu = [
+  {
+    id: 1,
+    icon: window_icon,
+    name: "Dashboard",
+  },
+  {
+    id: 2,
+    icon: racket,
+    name: "Matches",
+    hasSubMenu: true,
+  },
+  {
+    id: 3,
+    icon: trophy_icon,
+    name: "Match Request",
+  },
+  {
+    id: 4,
+    icon: players,
+    name: "Players",
+  },
+  {
+    id: 5,
+    icon: levels,
+    name: "Level Requests",
+    hasSubMenu: true,
+  },
+  {
+    id: 6,
+    icon: setting,
+    name: "Setting",
+  },
 ];

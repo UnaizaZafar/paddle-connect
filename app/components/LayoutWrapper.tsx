@@ -8,6 +8,8 @@ import { ModeToggle } from "./Authentication/ModeToggle";
 import Link from "next/link";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import SideBar from "./Dashboard/SideBar";
+import Topbar from "./Dashboard/Topbar";
 
 export default function LayoutWrapper({
   children,
@@ -15,7 +17,7 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const createAccountLinks =
+  const createAccountScreens =
     pathname === "/login" ||
     pathname === "/sign-up" ||
     pathname === "/verify-account" ||
@@ -24,10 +26,11 @@ export default function LayoutWrapper({
     pathname === "/onboarding" ||
     pathname === "/complete-subscription";
 
+  const dashboardScreens = pathname === "/players";
   const queryClient = new QueryClient();
   return (
     <QueryClientProvider client={queryClient}>
-      {createAccountLinks ? (
+      {createAccountScreens ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-338 mx-auto mt-6 mb-8 h-full">
           <div className="flex justify-between">
             <Link href={"/"}>
@@ -62,6 +65,14 @@ export default function LayoutWrapper({
           <p className="text-sub-500 font-inter text-sm leading-5 tracking-tightest">
             © 2025 Paddle Art
           </p>
+        </div>
+      ) : dashboardScreens ? (
+        <div className="flex justify-end">
+          <Topbar />
+          <div className="flex flex-1">
+            <SideBar />
+            {children}
+          </div>
         </div>
       ) : (
         <>
