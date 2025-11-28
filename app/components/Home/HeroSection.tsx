@@ -1,4 +1,4 @@
-import { user1, user2, user3 } from "@/public/utils/svgs";
+import { user1, user2, user3 } from "@/utils/svgs";
 import CTAButton from "../Reusable/CTAButton";
 
 export default function HeroSection() {

@@ -17,6 +17,9 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const queryClient = new QueryClient();
+
+  // Pages without navbar/footer
   const createAccountScreens =
     pathname === "/login" ||
     pathname === "/sign-up" ||
@@ -26,10 +29,12 @@ export default function LayoutWrapper({
     pathname === "/onboarding" ||
     pathname === "/complete-subscription";
 
+  // Dashboard pages with sidebar/topbar
   const dashboardScreens = pathname === "/players";
-  const queryClient = new QueryClient();
+
   return (
     <QueryClientProvider client={queryClient}>
+      {/* -------------------- Account Pages -------------------- */}
       {createAccountScreens ? (
         <div className="flex flex-col justify-between max-lg:px-4 max-xxl:px-6 2xl:px-0 max-w-338 mx-auto mt-6 mb-8 h-full">
           <div className="flex justify-between">
@@ -50,7 +55,7 @@ export default function LayoutWrapper({
                     className="underline font-medium dark:text-sub-400 hover:text-sub-500 text-[#1e1e1e]"
                   >
                     Register
-                  </Link>{" "}
+                  </Link>
                 </p>
                 <ModeToggle />
               </div>
@@ -58,23 +63,37 @@ export default function LayoutWrapper({
               <ModeToggle />
             )}
           </div>
+
           <ToastContainer position="top-right" autoClose={2500} />
+
           <div className="flex justify-center items-center bg-[url(/images/pattern.webp)] bg-no-repeat bg-cover bg-center h-full">
             {children}
           </div>
+
           <p className="text-sub-500 font-inter text-sm leading-5 tracking-tightest">
             © 2025 Paddle Art
           </p>
         </div>
       ) : dashboardScreens ? (
-        <div className="flex justify-end">
-          <Topbar />
-          <div className="flex flex-1">
+        /* -------------------- Dashboard Pages -------------------- */
+        <div className="flex h-screen w-screen">
+          {/* Topbar fixed */}
+          <div className="fixed top-0 left-[272px] right-0 z-50">
+            <Topbar />
+          </div>
+
+          {/* Sidebar fixed below Topbar */}
+          <div className="fixed top-0 left-0 bottom-0 z-40">
             <SideBar />
+          </div>
+
+          {/* Scrollable children */}
+          <div className="flex-1 ml-[272px]  overflow-auto">
             {children}
           </div>
         </div>
       ) : (
+        /* -------------------- Default Pages -------------------- */
         <>
           <Navbar />
           {children}

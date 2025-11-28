@@ -1902,8 +1902,8 @@ export const close_button = [
 export const player_profile = [
   <svg
     key="player_profile"
-    width={40}
-    height={40}
+    width={34}
+    height={34}
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -2214,8 +2214,8 @@ export const verified_batch = [
 export const notifications = [
   <svg
     key="notifications"
-    width={40}
-    height={40}
+    width={34}
+    height={34}
     viewBox="0 0 40 40"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -2273,5 +2273,245 @@ export const notifications = [
         />
       </filter>
     </defs>
+  </svg>,
+];
+export const calendar_icon = [
+  <svg
+    key="calendar_icon"
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M13.3334 1.66602V4.99935ZM6.66669 1.66602V4.99935Z"
+      fill="#525866"
+    />
+    <path
+      d="M13.3334 1.66602V4.99935M6.66669 1.66602V4.99935"
+      stroke="#141B34"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.8333 3.33398H9.16667C6.02397 3.33398 4.45262 3.33398 3.47631 4.31029C2.5 5.28661 2.5 6.85795 2.5 10.0007V11.6673C2.5 14.81 2.5 16.3814 3.47631 17.3577C4.45262 18.334 6.02397 18.334 9.16667 18.334H10.8333C13.976 18.334 15.5474 18.334 16.5237 17.3577C17.5 16.3814 17.5 14.81 17.5 11.6673V10.0007C17.5 6.85795 17.5 5.28661 16.5237 4.31029C15.5474 3.33398 13.976 3.33398 10.8333 3.33398Z"
+      stroke="#141B34"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.5 8.33398H17.5"
+      stroke="#141B34"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.99627 11.666H10.0038M9.99627 14.9993H10.0038M13.3259 11.666H13.3334M6.66669 11.666H6.67416M6.66669 14.9993H6.67416"
+      stroke="#141B34"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const approved = [
+  <svg
+    key="approved"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
+      stroke="#A4E627"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M8 12.5L10.5 15L16 9"
+      stroke="#A4E627"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const reject = [
+  <svg
+    key="reject"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.04001 4.80078L18.48 18.2408"
+      stroke="#A4E627"
+      strokeWidth="1.44"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.36 11.5199C21.36 6.21799 17.0619 1.91992 11.76 1.91992C6.45807 1.91992 2.16 6.21799 2.16 11.5199C2.16 16.8218 6.45807 21.1199 11.76 21.1199C17.0619 21.1199 21.36 16.8218 21.36 11.5199Z"
+      stroke="#A4E627"
+      strokeWidth="1.44"
+    />
+  </svg>,
+];
+export const pending = [
+  <svg
+    key="pending"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.04798 8.60657L2.53784 8.45376C4.33712 3.70477 9.503 0.999917 14.5396 2.34474C19.904 3.77711 23.0904 9.26107 21.6565 14.5935C20.2227 19.926 14.7116 23.0876 9.3472 21.6553C5.36419 20.5917 2.58192 17.2946 2 13.4844"
+      stroke="#A4E627"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12 8V12L14 14"
+      stroke="#A4E627"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const magnifying_glass = [
+  <svg
+    key="magnifying_glass"
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.0001 14L11.1335 11.1333M12.6667 7.33333C12.6667 10.2789 10.2789 12.6667 7.33333 12.6667C4.38781 12.6667 2 10.2789 2 7.33333C2 4.38781 4.38781 2 7.33333 2C10.2789 2 12.6667 4.38781 12.6667 7.33333Z"
+      stroke="#71717A"
+      strokeWidth="1.33"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const select_menu = [
+  <svg
+    key="select_menu"
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 5.25C11.3813 5.25 10.875 5.75625 10.875 6.375C10.875 6.99375 11.3813 7.5 12 7.5C12.6187 7.5 13.125 6.99375 13.125 6.375C13.125 5.75625 12.6187 5.25 12 5.25ZM12 16.5C11.3813 16.5 10.875 17.0063 10.875 17.625C10.875 18.2437 11.3813 18.75 12 18.75C12.6187 18.75 13.125 18.2437 13.125 17.625C13.125 17.0063 12.6187 16.5 12 16.5ZM12 10.875C11.3813 10.875 10.875 11.3812 10.875 12C10.875 12.6188 11.3813 13.125 12 13.125C12.6187 13.125 13.125 12.6188 13.125 12C13.125 11.3812 12.6187 10.875 12 10.875Z"
+      fill="#525866"
+    />
+  </svg>,
+];
+export const reject_warn = [
+  <svg
+    key="reject_warn"
+    width={62}
+    height={62}
+    viewBox="0 0 62 62"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x={7}
+      y={7}
+      width={48}
+      height={48}
+      rx={24}
+      fill="#DF1C41"
+      fillOpacity="0.3"
+    />
+    <rect
+      x="3.5"
+      y="3.5"
+      width={55}
+      height={55}
+      rx="27.5"
+      stroke="#DF1C41"
+      strokeOpacity="0.2"
+      strokeWidth={7}
+    />
+    <path
+      d="M32.6041 38.5H29.3961C25.5374 38.5 23.608 38.5 22.8971 37.2449C22.1861 35.9899 23.1729 34.3262 25.1465 30.9987L26.7506 28.2944C28.6464 25.0982 29.5943 23.5 31.0001 23.5C32.4058 23.5 33.3538 25.0981 35.2496 28.2944L36.8537 30.9987C38.8273 34.3262 39.8141 35.9899 39.1031 37.2449C38.3921 38.5 36.4628 38.5 32.6041 38.5Z"
+      stroke="#FF383C"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M31 28.5V32.25"
+      stroke="#FF383C"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M31 35.1602V35.1685"
+      stroke="#FF383C"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const approved_alert = [
+  <svg
+    key="approved_alert"
+    width={62}
+    height={62}
+    viewBox="0 0 62 62"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <rect
+      x={7}
+      y={7}
+      width={48}
+      height={48}
+      rx={24}
+      fill="#34C759"
+      fillOpacity="0.3"
+    />
+    <rect
+      x="3.5"
+      y="3.5"
+      width={55}
+      height={55}
+      rx="27.5"
+      stroke="#34C759"
+      strokeOpacity="0.2"
+      strokeWidth={7}
+    />
+    <path
+      d="M39.3332 30.9993C39.3332 26.397 35.6022 22.666 30.9998 22.666C26.3975 22.666 22.6665 26.397 22.6665 30.9993C22.6665 35.6017 26.3975 39.3327 30.9998 39.3327C35.6022 39.3327 39.3332 35.6017 39.3332 30.9993Z"
+      stroke="#34C759"
+      strokeWidth="1.5"
+    />
+    <path
+      d="M27.6665 31.4167L29.7498 33.5L34.3332 28.5"
+      stroke="#34C759"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>,
 ];

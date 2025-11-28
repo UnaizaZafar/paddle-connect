@@ -1,4 +1,4 @@
-import { ball } from "@/public/utils/svgs";
+import { ball } from "@/utils/svgs";
 type TagPillProps = {
   text: string;
 };

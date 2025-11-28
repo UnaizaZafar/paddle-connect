@@ -1,5 +1,5 @@
 "use client";
-import { sideBarMenu } from "@/public/utils/data";
+import { sideBarMenu } from "@/utils/data";
 import Image from "next/image";
 import MenuPill from "./MenuPill";
 import { useState } from "react";
@@ -9,13 +9,13 @@ import {
   headphone,
   player_profile,
   verified_batch,
-} from "@/public/utils/svgs";
+} from "@/utils/svgs";
 
 export default function SideBar() {
   const [isSelected, setIsSelected] = useState(1);
 
   return (
-    <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-68 h-screen z-10">
+    <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-[272px] h-screen z-10">
       <div className="px-3 py-3.5 border-b border-soft-200">
         <Image
           src={"/images/logo.webp"}

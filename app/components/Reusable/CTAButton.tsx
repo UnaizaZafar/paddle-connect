@@ -1,4 +1,4 @@
-import { arrow } from "@/public/utils/svgs";
+import { arrow } from "@/utils/svgs";
 import Link from "next/link";
 type ButtonVariants = "primary-colored" | "primary-black" | "secondary";
 type CTAButtonProps = {

@@ -11,7 +11,7 @@ import {
   lock,
   signupUser,
   user_line,
-} from "@/public/utils/svgs";
+} from "@/utils/svgs";
 export default function SignupPage() {
   return (
     <CardDemo

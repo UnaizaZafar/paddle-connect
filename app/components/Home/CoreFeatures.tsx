@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { coreFeaturesData } from "@/public/utils/data";
+import { coreFeaturesData } from "@/utils/data";
 import SectionHeader from "../Reusable/SectionHeader";
 import Feature from "../Reusable/Feature";
 

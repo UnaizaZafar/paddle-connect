@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { deleteCookie } from "@/lib/cookies";
-import { gym_logo, gym_racket } from "@/public/utils/svgs";
+import { gym_logo, gym_racket } from "@/utils/svgs";
 export default function OnboardingPage() {
   const router = useRouter();
   const handleLogout = () => {

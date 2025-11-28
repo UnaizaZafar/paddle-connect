@@ -4,7 +4,7 @@ import AUTH, {
   AuthResponse,
   LoginPayload,
 } from "@/services/auth.service";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
 import { setCookie, setCookieJSON } from "@/lib/cookies";
@@ -51,3 +51,11 @@ export function useLogin() {
     },
   });
 }
+// export function GetPlayers(){
+//   const playerList=useQuery({
+//     queryKey:["players"],
+//     queryFn:AUTH.getPlayers,
+//     enabled:false
+//     }
+//   })
+// }

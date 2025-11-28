@@ -1,6 +1,6 @@
 import CTAButton from "./CTAButton";
 import ListItem from "./ListItem";
-import { priceListItems } from "@/public/utils/data";
+import { priceListItems } from "@/utils/data";
 type PriceCardProps = {
   icon: React.ReactNode;
   price: string;

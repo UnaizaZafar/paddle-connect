@@ -2,7 +2,7 @@
 import CTAButton from "../Reusable/CTAButton";
 import Link from "next/link";
 import Image from "next/image";
-import { menu } from "@/public/utils/data";
+import { menu } from "@/utils/data";
 import { useState, useEffect } from "react";
 export default function Navbar() {
   return (

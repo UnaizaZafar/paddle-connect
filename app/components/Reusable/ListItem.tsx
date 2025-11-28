@@ -1,4 +1,4 @@
-import { tick } from "@/public/utils/svgs";
+import { tick } from "@/utils/svgs";
 type ListProps = {
   text: string;
 };

@@ -1,4 +1,4 @@
-import { paddlePlatformCardsData } from "@/public/utils/data";
+import { paddlePlatformCardsData } from "@/utils/data";
 import PlatformCard from "../Reusable/PlatformCard";
 import SectionHeader from "../Reusable/SectionHeader";
 export default function PaddlePlatform() {

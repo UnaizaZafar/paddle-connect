@@ -5,7 +5,7 @@ import { CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLogin } from "@/hooks/useAuth";
-import { emailIcon, eye_line, lock, loginUser } from "@/public/utils/svgs";
+import { emailIcon, eye_line, lock, loginUser } from "@/utils/svgs";
 import { useState } from "react";
 import { LoginPayload } from "@/services/auth.service";
 export default function LoginPage() {

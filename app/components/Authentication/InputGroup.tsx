@@ -11,7 +11,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { flag } from "@/public/utils/svgs";
+import { flag } from "@/utils/svgs";
 
 export function InputGroupDropdown() {
   return (

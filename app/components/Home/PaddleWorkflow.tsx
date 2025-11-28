@@ -1,4 +1,4 @@
-import { cardData } from "@/public/utils/data";
+import { cardData } from "@/utils/data";
 import Card from "../Reusable/Card";
 import SectionHeader from "../Reusable/SectionHeader";
 import { CardSizeVariant } from "../Reusable/CardData";

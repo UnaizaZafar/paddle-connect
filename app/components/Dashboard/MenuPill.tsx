@@ -1,11 +1,11 @@
-import { chevron } from "@/public/utils/svgs";
+import { chevron } from "@/utils/svgs";
 import Link from "next/link";
 type MenuPillProps = {
   icon: React.ReactNode;
   text: string;
   hasSubMenu?: boolean;
   onClick: () => void;
-  isSelected: number;
+  isSelected: boolean;
 };
 export default function MenuPill({
   icon,

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { menu } from "@/public/utils/data";
+import { menu } from "@/utils/data";
 import Link from "next/link";
 import CTAButton from "../Reusable/CTAButton";
 export default function Footer() {

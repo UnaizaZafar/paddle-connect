@@ -3,7 +3,7 @@ import Link from "next/link";
 import { CardDemo } from "@/app/components/Authentication/CardDemo";
 import { Button } from "@/components/ui/button";
 import { CardContent, CardFooter } from "@/components/ui/card";
-import { verify_account } from "@/public/utils/svgs";
+import { verify_account } from "@/utils/svgs";
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 
 import {

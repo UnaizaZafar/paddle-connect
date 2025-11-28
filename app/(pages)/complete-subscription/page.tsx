@@ -13,7 +13,7 @@ import {
   free_trial,
   paddle_connect_logo,
   subscription_card,
-} from "@/public/utils/svgs";
+} from "@/utils/svgs";
 import { useState } from "react";
 export default function SubscriptionPage() {
   const [subscriptionType, setSubscriptionType] = useState("free");
