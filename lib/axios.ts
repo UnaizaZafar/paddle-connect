@@ -1,8 +1,9 @@
+import { store } from "@/app/redux/store";
 import axios, { type AxiosError, type InternalAxiosRequestConfig } from "axios";
 
 // Create Axios instance
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL ,
+  baseURL: process.env.NEXT_PUBLIC_API_URL,
   headers: {
     "Content-Type": "application/json",
   },
@@ -12,12 +13,11 @@ const api = axios.create({
 // Flag to prevent multiple simultaneous refresh attempts
 let isRefreshing = false;
 
-
 // This interceptor runs before any request is sent from your application to the server. Its purpose is to automatically attach the user's access token to the Authorization header if one exists in localStorage..
-// ✅ Request Interceptor (e.g., attach auth token)
+// ✅ Request Interceptor (e.g., attach  token)
 api.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem("token");
+    const token = store.getState().login.token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -40,7 +40,6 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
 
 // ✅ Response Interceptor (e.g., handle errors globally and token refresh)
 api.interceptors.response.use(

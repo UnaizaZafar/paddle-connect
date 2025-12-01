@@ -42,3 +42,11 @@ export function useLogin() {
     },
   });
 }
+// export function usePlayersList() {
+//   return useQuery({
+//     queryKey: ["players"],
+//     queryFn: AUTH.getPlayers,
+//     staleTime: 5 * 60 * 1000,
+//     retry: 1,
+//   });
+// }

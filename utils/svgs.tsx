@@ -2330,12 +2330,12 @@ export const approved = [
   >
     <path
       d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12Z"
-      stroke="#A4E627"
+      stroke="currentColor"
       strokeWidth="1.5"
     />
     <path
       d="M8 12.5L10.5 15L16 9"
-      stroke="#A4E627"
+      stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -2353,14 +2353,14 @@ export const reject = [
   >
     <path
       d="M5.04001 4.80078L18.48 18.2408"
-      stroke="#A4E627"
+      stroke="currentColor"
       strokeWidth="1.44"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M21.36 11.5199C21.36 6.21799 17.0619 1.91992 11.76 1.91992C6.45807 1.91992 2.16 6.21799 2.16 11.5199C2.16 16.8218 6.45807 21.1199 11.76 21.1199C17.0619 21.1199 21.36 16.8218 21.36 11.5199Z"
-      stroke="#A4E627"
+      stroke="currentColor"
       strokeWidth="1.44"
     />
   </svg>,
@@ -2511,6 +2511,38 @@ export const approved_alert = [
       d="M27.6665 31.4167L29.7498 33.5L34.3332 28.5"
       stroke="#34C759"
       strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>,
+];
+export const warn = [
+  <svg
+    key="warn"
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11.604 17.5H8.39602C4.53732 17.5 2.60798 17.5 1.89699 16.2449C1.186 14.9899 2.17282 13.3262 4.14647 9.99875L5.7505 7.29444C7.64635 4.09815 8.59427 2.5 10 2.5C11.4058 2.5 12.3537 4.09814 14.2495 7.29443L15.8536 9.99875C17.8272 13.3262 18.814 14.9899 18.103 16.2449C17.392 17.5 15.4627 17.5 11.604 17.5Z"
+      stroke="#FF383C"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 7.5V11.25"
+      stroke="#FF383C"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 14.1602V14.1685"
+      stroke="#FF383C"
+      strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
     />

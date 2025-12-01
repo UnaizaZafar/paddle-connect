@@ -36,12 +36,6 @@ const AUTH = {
     );
     return res.data;
   },
-  async getPlayers() {
-    const res = await api.get<ApiResponse<AuthResponse>>(
-      `${API_BASE_URL}/players`,
-      
-    );
-    return res.data;
-  },
+ 
 };
 export default AUTH;

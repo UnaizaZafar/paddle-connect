@@ -1,30 +1,59 @@
 "use client";
-
 import { ColumnDef } from "@tanstack/react-table";
 import React from "react";
-
+import { formatDate } from "./helper";
+import ActionMenu from "@/app/components/Dashboard/ActionMenu";
 export type Player = {
-  playerName: string;
-  currentLevel: string;
-  matchDate: string;
-  requestedDate: string;
-  acceptedDate: string;
-  status: "pending" | "approved" | "rejected";
-  options: React.ReactNode;
+  profilePicture: string;
+  fullName: string;
+  rank: string;
+  phoneNumber: string;
+  dateOfBirth: string;
+  createdAt: string;
+  status: "ACTIVE" | "INACTIVE";
 };
 
 export const tableColumns: ColumnDef<Player, unknown>[] = [
   {
-    accessorKey: "playerName",
+    accessorKey: "fullName",
     header: "Player Name",
     cell: ({ row }) => {
-      return <div className="">{row.original.playerName}</div>;
+      return (
+        <div className="flex gap-3 items-center truncate w-11/12">
+          <img
+            height={40}
+            width={40}
+            className="h-10 w-10 rounded-full"
+            src={row.original.profilePicture || "/images/player.webp"}
+            alt={row.original.fullName}
+          />
+          {row.original.fullName}
+        </div>
+      );
     },
   },
-  { accessorKey: "currentLevel", header: "Current Level" },
-  { accessorKey: "matchDate", header: "Match Date" },
-  { accessorKey: "requestedDate", header: "Requested Date" },
-  { accessorKey: "acceptedDate", header: "Accepted Date" },
+  {
+    accessorKey: "rank",
+    header: "Current Level",
+    cell: ({ row }) => row.original?.rank ?? "—",
+  },
+  {
+    accessorKey: "phoneNumber",
+    header: "Phone Number",
+    cell: ({ row }) => row.original?.phoneNumber ?? "—",
+  },
+  {
+    accessorKey: "dateOfBirth",
+    header: "DOB",
+    cell: ({ row }) =>
+      row.original?.dateOfBirth ? formatDate(row.original.dateOfBirth) : "—",
+  },
+  {
+    accessorKey: "createdAt",
+    header: "Created At",
+    cell: ({ row }) =>
+      row.original?.dateOfBirth ? formatDate(row.original.dateOfBirth) : "—",
+  },
   {
     accessorKey: "status",
     header: "Status",
@@ -32,9 +61,8 @@ export const tableColumns: ColumnDef<Player, unknown>[] = [
       const status = row.original.status;
       // Move the styles inside the cell
       const statusStyles: Record<Player["status"], string> = {
-        approved: " bg-[#38C793]",
-        rejected: " bg-[#FF383C]",
-        pending: " bg-[#FFCC00]",
+        ACTIVE: " bg-[#38C793]",
+        INACTIVE: " bg-[#FF383C]",
       };
       return (
         <div className="w-max px-2 py-1 text-center border border-soft-200 rounded-md text-xs font-medium flex items-center gap-2.5 text-sub-500">
@@ -45,8 +73,8 @@ export const tableColumns: ColumnDef<Player, unknown>[] = [
     },
   },
   {
-    accessorKey: "options",
+    accessorKey: "actions",
     header: "",
-    cell: ({ row }): React.ReactNode => row.original.options,
+    cell: () => <ActionMenu />,
   },
 ];

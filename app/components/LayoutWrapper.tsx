@@ -90,7 +90,7 @@ export default function LayoutWrapper({
             </div>
 
             {/* Scrollable children */}
-            <div className="flex-1 ml-[272px]  overflow-auto">{children}</div>
+            <div className="flex-1 ml-[272px] h-full overflow-auto">{children}</div>
           </div>
         ) : (
           /* -------------------- Default Pages -------------------- */
