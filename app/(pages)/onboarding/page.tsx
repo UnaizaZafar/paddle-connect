@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { InputGroupDropdown } from "@/app/components/Authentication/InputGroup";
 import { SelectDemo } from "@/app/components/Authentication/SelectField";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { deleteCookie } from "@/lib/cookies";
 import { gym_logo, gym_racket } from "@/utils/svgs";
+import { removeLoginData } from "@/app/redux/slices/userSlice";
+import { useDispatch } from "react-redux";
 export default function OnboardingPage() {
+  const dispatch = useDispatch();
   const router = useRouter();
   const handleLogout = () => {
     // Clear localStorage
@@ -26,6 +29,7 @@ export default function OnboardingPage() {
     deleteCookie("token");
     deleteCookie("authData");
     deleteCookie("loginCreds");
+    dispatch(removeLoginData());
     // Redirect to login
     router.replace("/login");
   };

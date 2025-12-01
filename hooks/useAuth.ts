@@ -7,35 +7,26 @@ import AUTH, {
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
-import { setCookie, setCookieJSON } from "@/lib/cookies";
+import { setCookie } from "@/lib/cookies";
 import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
+import { addLoginData } from "@/app/redux/slices/userSlice";
 export function useLogin() {
   const router = useRouter();
-
+  const dispatch = useDispatch();
   return useMutation<ApiResponse<AuthResponse>, ApiError, LoginPayload>({
     mutationFn: AUTH.login,
     onSuccess: (response, variables) => {
       const authData = response.data;
       const token = authData.token || authData.accessToken || "";
-      const refreshToken = authData.refreshToken || "";
-      const user = authData.user;
+      dispatch(addLoginData(authData));
+
       if (!token) {
         console.error("No token found in response:", response);
         alert("Login failed: No token received");
         return;
       }
       setCookie("token", token, { maxAge: 86400 });
-      localStorage.setItem("token", token);
-      setCookieJSON("authData", authData, { maxAge: 85400 });
-      setCookieJSON(
-        "loginCreds",
-        { email: variables.email },
-        { maxAge: 85400 }
-      );
-      if (refreshToken) {
-        localStorage.setItem("refreshToken", refreshToken);
-      }
-      localStorage.setItem("user", JSON.stringify(user));
       router.replace("/onboarding");
       toast.success("Successfully Logged in");
     },
@@ -51,11 +42,3 @@ export function useLogin() {
     },
   });
 }
-// export function GetPlayers(){
-//   const playerList=useQuery({
-//     queryKey:["players"],
-//     queryFn:AUTH.getPlayers,
-//     enabled:false
-//     }
-//   })
-// }

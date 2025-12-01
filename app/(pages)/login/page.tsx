@@ -8,14 +8,17 @@ import { useLogin } from "@/hooks/useAuth";
 import { emailIcon, eye_line, lock, loginUser } from "@/utils/svgs";
 import { useState } from "react";
 import { LoginPayload } from "@/services/auth.service";
+// import { useSelector } from "react-redux";
+// import { selectUser } from "@/app/redux/slices/userSlice";
 export default function LoginPage() {
   const [form, setForm] = useState<LoginPayload>({
     email: "",
     password: "",
   });
   const loginMutation = useLogin();
-
+  // const userData = useSelector(selectUser)
   const handleSubmit = (e: React.FormEvent) => {
+
     e.preventDefault();
     const pwd = form.password;
     const mail = form.email;
