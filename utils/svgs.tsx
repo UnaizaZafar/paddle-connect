@@ -1862,6 +1862,7 @@ export const chevron = [
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className="shrink-0"
   >
     <path
       d="M10.7958 9.99956L7.08333 6.28706L8.14383 5.22656L12.9168 9.99956L8.14383 14.7726L7.08333 13.7121L10.7958 9.99956Z"

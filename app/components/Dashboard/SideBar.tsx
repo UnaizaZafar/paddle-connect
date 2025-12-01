@@ -10,19 +10,24 @@ import {
   player_profile,
   verified_batch,
 } from "@/utils/svgs";
+import { useSelector } from "react-redux";
+import { selectUser } from "@/app/redux/slices/userSlice";
+import Link from "next/link";
 
 export default function SideBar() {
   const [isSelected, setIsSelected] = useState(1);
-
+  const userData = useSelector(selectUser);
   return (
     <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-[272px] h-screen z-10">
       <div className="px-3 py-3.5 border-b border-soft-200">
-        <Image
-          src={"/images/logo.webp"}
-          alt="Paddle Connect Logo"
-          width={190}
-          height={34}
-        />
+        <Link href={"#"}>
+          <Image
+            src={"/images/logo.webp"}
+            alt="Paddle Connect Logo"
+            width={190}
+            height={34}
+          />
+        </Link>
       </div>
       <div className="p-5 flex flex-col justify-between h-full">
         <div className="flex flex-col gap-2.5">
@@ -63,9 +68,11 @@ export default function SideBar() {
           {player_profile}
           <div className="flex flex-col gap-1">
             <p className="font-medium tracking-tightest text-main-900 text-sm leading-5 flex items-center gap-0.5 w-full">
-              Arthur Taylor {verified_batch}
+              {userData.name} {verified_batch}
             </p>
-            <p className="text-sub-500 text-xs leading-4">arthur@alignui.com</p>
+            <p className="text-sub-500 text-xs leading-4 w-11/12 truncate">
+              {userData.email}
+            </p>
           </div>
         </div>
         {chevron}
