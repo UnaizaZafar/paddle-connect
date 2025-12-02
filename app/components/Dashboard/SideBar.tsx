@@ -16,6 +16,7 @@ import Link from "next/link";
 
 export default function SideBar() {
   const [isSelected, setIsSelected] = useState(1);
+  const [isOpen, setIsOpen] = useState(true);
   const userData = useSelector(selectUser);
   return (
     <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-[272px] h-screen z-10">
@@ -48,20 +49,22 @@ export default function SideBar() {
           </div>
         </div>
 
-        <div className="bg-weak-100 rounded-xl p-4 flex flex-col gap-3 ">
-          <div className="flex justify-between w-full">
-            <div className="flex gap-2.5">
-              {headphone}
-              <p className="text-main-900 font-medium tracking-[-1.1%] leading-6">
-                Need support?
-              </p>
+        {isOpen && (
+          <div className="bg-weak-100 rounded-xl p-4 flex flex-col gap-3 ">
+            <div className="flex justify-between w-full">
+              <div className="flex gap-2.5">
+                {headphone}
+                <p className="text-main-900 font-medium tracking-[-1.1%] leading-6">
+                  Need support?
+                </p>
+              </div>
+              <button onClick={() => setIsOpen(false)} className="cursor-pointer">{close_button}</button>
             </div>
-            <span>{close_button}</span>
+            <p className="text-sub-500 text-sm tracking-tightest leading-5">
+              Contact with one of our experts to get support.
+            </p>
           </div>
-          <p className="text-sub-500 text-sm tracking-tightest leading-5">
-            Contact with one of our experts to get support.
-          </p>
-        </div>
+        )}
       </div>
       <div className="p-6 flex justify-between items-center border-t border-soft-200">
         <div className="flex gap-3 items-center">
