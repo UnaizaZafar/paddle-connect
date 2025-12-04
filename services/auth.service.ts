@@ -8,10 +8,17 @@ export interface LoginPayload {
 export interface InviteOwnerPayload {
   emails: string[];
 }
+export interface RegisterPayload {
+  token: string;
+  email: string;
+  password: string;
+  fullName?: string;
+}
 export interface User {
   id: number;
   email: string;
   name?: string;
+  fullName?: string;
   phone?: string;
   role: string;
   isVerified: boolean;
@@ -52,7 +59,19 @@ const AUTH = {
       "/admin/gym-owners/invite",
       payload
     );
-    console.log("Gym owner invite response", res);
+    return res.data;
+  },
+  async registerUser(payload: RegisterPayload) {
+    const res = await api.post<ApiResponse<AuthResponse>>(
+      `${API_BASE_URL}/register`,
+      payload,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    console.log("res.data", res.data);
     return res.data;
   },
 };

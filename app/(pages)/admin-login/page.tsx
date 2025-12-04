@@ -8,6 +8,7 @@ import { useAdminLogin } from "@/hooks/useAuth";
 import { emailIcon, eye_line, lock, loginUser } from "@/utils/svgs";
 import { useState } from "react";
 import { LoginPayload } from "@/services/auth.service";
+import LoadingSpinner from "@/app/components/Reusable/LoadingSpinner";
 export default function AdminLoginPage() {
   const [form, setForm] = useState<LoginPayload>({
     email: "",
@@ -63,6 +64,7 @@ export default function AdminLoginPage() {
                 icon={emailIcon}
                 required
                 className="text-soft-400"
+                disabled={adminLoginMutation.isPending}
               />
               <p id="email-error" className="text-xs text-red-base" />
             </div>
@@ -84,6 +86,7 @@ export default function AdminLoginPage() {
                 placeholder="••••••••"
                 icon={lock}
                 iconRight={eye_line}
+                disabled={adminLoginMutation.isPending}
               />
               <p id="password-error" className="text-xs text-red-base" />
             </div>
@@ -102,7 +105,7 @@ export default function AdminLoginPage() {
             variant={"submit"}
             className="cursor-pointer w-full p-3.5 leading-5 font-semibold"
           >
-            Login
+            {adminLoginMutation.isPending ? <LoadingSpinner /> : "Login"}
           </Button>
         </form>
       </CardContent>

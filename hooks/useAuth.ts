@@ -4,6 +4,7 @@ import AUTH, {
   AuthResponse,
   InviteOwnerPayload,
   LoginPayload,
+  RegisterPayload,
 } from "@/services/auth.service";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
@@ -12,6 +13,7 @@ import { setCookie } from "@/lib/cookies";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addLoginData } from "@/app/redux/slices/userSlice";
+import { registerData } from "@/app/redux/slices/registerSlice";
 export function useLogin() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -104,6 +106,38 @@ export function useInviteGymOwner() {
         toast.error("Unauthorized access.");
       } else {
         toast.error(message || "Failed to send invitation");
+      }
+    },
+  });
+}
+export function useRegister() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  return useMutation<ApiResponse<AuthResponse>, ApiError, RegisterPayload>({
+    mutationFn: (payload: RegisterPayload) => AUTH.registerUser(payload),
+    onSuccess: (response) => {
+      const authData = response.data;
+      dispatch(
+        registerData({
+          email: authData.user?.email || "",
+          name: authData.user?.name || "",
+          fullName: authData.user?.fullName || "",
+          password: "",
+        })
+      );
+      router.replace("/verify-account");
+
+      toast.success("Successfully Registered");
+    },
+    onError: (error) => {
+      alert(error?.message);
+      const status = error?.response?.status || "Login failed";
+      if (status === 404) {
+        toast.error("User doesn't exist");
+      } else if (status === 401 || status === 500) {
+        toast.error("Incorrect email or password");
+      } else {
+        toast.error("Registration failed");
       }
     },
   });

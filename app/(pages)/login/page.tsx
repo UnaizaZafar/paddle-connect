@@ -8,17 +8,14 @@ import { useLogin } from "@/hooks/useAuth";
 import { emailIcon, eye_line, lock, loginUser } from "@/utils/svgs";
 import { useState } from "react";
 import { LoginPayload } from "@/services/auth.service";
-// import { useSelector } from "react-redux";
-// import { selectUser } from "@/app/redux/slices/userSlice";
+import LoadingSpinner from "@/app/components/Reusable/LoadingSpinner";
 export default function LoginPage() {
   const [form, setForm] = useState<LoginPayload>({
     email: "",
     password: "",
   });
   const loginMutation = useLogin();
-  // const userData = useSelector(selectUser)
   const handleSubmit = (e: React.FormEvent) => {
-
     e.preventDefault();
     const pwd = form.password;
     const mail = form.email;
@@ -67,6 +64,7 @@ export default function LoginPage() {
                 icon={emailIcon}
                 required
                 className="text-soft-400"
+                disabled={loginMutation.isPending}
               />
               <p id="email-error" className="text-xs text-red-base" />
             </div>
@@ -88,6 +86,7 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 icon={lock}
                 iconRight={eye_line}
+                disabled={loginMutation.isPending}
               />
               <p id="password-error" className="text-xs text-red-base" />
             </div>
@@ -106,7 +105,7 @@ export default function LoginPage() {
             variant={"submit"}
             className="cursor-pointer w-full p-3.5 leading-5 font-semibold"
           >
-            Login
+            {loginMutation.isPending ? <LoadingSpinner /> : "Login"}
           </Button>
         </form>
       </CardContent>
