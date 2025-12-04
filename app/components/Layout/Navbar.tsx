@@ -29,7 +29,21 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <CTAButton text="Login" variant="primary-black" showArrow={false} link={"/login"}/>
+        <div className="flex gap-2">
+          <CTAButton
+            text="Admin Login"
+            variant="primary-colored"
+            showArrow={false}
+            link={"/admin-login"}
+          />
+
+          <CTAButton
+            text="Login"
+            variant="primary-black"
+            showArrow={false}
+            link={"/login"}
+          />
+        </div>
       </nav>
       <HamburgerMenu />
     </>
@@ -107,7 +121,12 @@ const HamburgerMenu = () => {
           ))}
         </div>
 
-        <CTAButton text="Login" variant="primary-black" showArrow={false} link={"/login"}/>
+        <CTAButton
+          text="Login"
+          variant="primary-black"
+          showArrow={false}
+          link={"/login"}
+        />
       </div>
     </nav>
   );

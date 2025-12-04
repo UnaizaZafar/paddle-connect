@@ -9,7 +9,7 @@ type CTAButtonProps = {
 };
 const variantClasses: Record<ButtonVariants, string> = {
   "primary-colored":
-    "bg-[#98FF3A]  hover:bg-black hover:text-[#98FF3A] transition duration-300 text-black border-1.5 border-transparent",
+    "bg-[#98FF3A]  hover:bg-[#8ae635] transition duration-300 text-black border-1.5 border-transparent",
   "primary-black": "text-white bg-black",
   secondary:
     "bg-transparent hover:bg-white/30 transition duration-300 text-white border border-[#F2F2F7]",

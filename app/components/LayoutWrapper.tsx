@@ -54,7 +54,7 @@ export default function LayoutWrapper({
                     Don&apos;t have an account?{" "}
                     <Link
                       href={"/"}
-                      className="underline font-medium dark:text-sub-400 hover:text-sub-500 text-[#1e1e1e]"
+                      className="underline font-medium dark:text-sub-400 hover:text-sub-500 text-charcoal-black"
                     >
                       Register
                     </Link>
