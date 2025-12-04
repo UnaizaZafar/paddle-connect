@@ -7,7 +7,7 @@ import {
 type AuthenticationCardProps = {
   cardIcon: React.ReactNode;
   title: string;
-  subtitle: React.ReactNode;
+  subtitle?: React.ReactNode;
   children: React.ReactNode;
   showFullLine?: boolean;
   extraClasses?:string;

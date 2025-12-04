@@ -21,11 +21,8 @@ export default function OnboardingPage() {
   const dispatch = useDispatch();
   const router = useRouter();
   const handleLogout = () => {
-    // Clear localStorage
-    localStorage.removeItem("token");
-    localStorage.removeItem("refreshToken");
-    localStorage.removeItem("user");
     // Clear all cookies
+    deleteCookie("role");
     deleteCookie("token");
     deleteCookie("authData");
     deleteCookie("loginCreds");

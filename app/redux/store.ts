@@ -1,5 +1,7 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import loginReducer from "@/app/redux/slices/userSlice";
+import inviteReducer from "@/app/redux/slices/inviteOwnerSlice";
+
 import {
   persistStore,
   persistReducer, // Import the action type constants here
@@ -19,6 +21,7 @@ const persistConfig = {
 };
 const rootReducer = combineReducers({
   login: loginReducer,
+  invite: inviteReducer,
 });
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 

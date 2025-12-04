@@ -23,6 +23,8 @@ export default function LayoutWrapper({
   // Pages without navbar/footer
   const createAccountScreens =
     pathname === "/login" ||
+    pathname === "/admin-login" ||
+    pathname === "/invite-gym-owner" ||
     pathname === "/sign-up" ||
     pathname === "/verify-account" ||
     pathname === "/reset-password" ||
@@ -90,7 +92,9 @@ export default function LayoutWrapper({
             </div>
 
             {/* Scrollable children */}
-            <div className="flex-1 ml-[272px] h-full overflow-auto">{children}</div>
+            <div className="flex-1 ml-[272px] h-full overflow-auto">
+              {children}
+            </div>
           </div>
         ) : (
           /* -------------------- Default Pages -------------------- */
