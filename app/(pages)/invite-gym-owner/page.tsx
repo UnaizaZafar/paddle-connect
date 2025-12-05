@@ -10,6 +10,7 @@ import { useState } from "react";
 import { InviteOwnerPayload } from "@/services/auth.service";
 import { deleteCookie } from "@/lib/cookies";
 import { useRouter } from "next/navigation";
+import LoadingSpinner from "@/app/components/Reusable/LoadingSpinner";
 export default function InviteGymOwnerPage() {
   const router = useRouter();
   const [emails, setEmails] = useState<string>("");
@@ -27,6 +28,7 @@ export default function InviteGymOwnerPage() {
       emails: emails.split(",").map((e) => e.trim()),
     };
     inviteOwnerMutation.mutate(payload);
+    setEmails("");
   };
   const handleLogout = () => {
     // Clear all cookies
@@ -55,6 +57,7 @@ export default function InviteGymOwnerPage() {
               icon={emailIcon}
               required
               className="text-soft-400"
+              disabled={inviteOwnerMutation.isPending}
             />
             <p id="email-error" className="text-xs text-red-base" />
           </div>
@@ -65,11 +68,13 @@ export default function InviteGymOwnerPage() {
             variant={"submit"}
             className="cursor-pointer w-full p-3.5 leading-5 font-semibold"
           >
-            Invite
+            {inviteOwnerMutation.isPending ? <LoadingSpinner /> : "Invite"}
           </Button>
         </form>
       </CardContent>
-      <Button onClick={handleLogout} className="text-white">Logout</Button>
+      <Button onClick={handleLogout} className="text-white">
+        Logout
+      </Button>
     </CardDemo>
   );
 }

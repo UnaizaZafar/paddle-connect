@@ -5,6 +5,9 @@ import AUTH, {
   InviteOwnerPayload,
   LoginPayload,
   RegisterPayload,
+  RegisterResponse,
+  VerifyCodePayload,
+  VerifyCodeResponse,
 } from "@/services/auth.service";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
@@ -14,6 +17,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addLoginData } from "@/app/redux/slices/userSlice";
 import { registerData } from "@/app/redux/slices/registerSlice";
+import { verifyData } from "@/app/redux/slices/verificationSlice";
 export function useLogin() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -90,6 +94,11 @@ export function useInviteGymOwner() {
       console.log("invite data response", response);
 
       // const inviteLink = response?.data?.invitations?.[0]?.link;
+      // if (response?.data?.invitations?.success) {
+      //   toast.error("Invite Not Sent");
+      // } else {
+      //   toast.success("Successfully Sent Invite");
+      // }
       toast.success("Successfully Sent Invite");
 
       router.replace("/players");
@@ -113,20 +122,12 @@ export function useInviteGymOwner() {
 export function useRegister() {
   const router = useRouter();
   const dispatch = useDispatch();
-  return useMutation<ApiResponse<AuthResponse>, ApiError, RegisterPayload>({
+  return useMutation<ApiResponse<RegisterResponse>, ApiError, RegisterPayload>({
     mutationFn: (payload: RegisterPayload) => AUTH.registerUser(payload),
     onSuccess: (response) => {
-      const authData = response.data;
-      dispatch(
-        registerData({
-          email: authData.user?.email || "",
-          name: authData.user?.name || "",
-          fullName: authData.user?.fullName || "",
-          password: "",
-        })
-      );
+      const registeredData = response.data;
+      dispatch(registerData(registeredData));
       router.replace("/verify-account");
-
       toast.success("Successfully Registered");
     },
     onError: (error) => {
@@ -138,6 +139,39 @@ export function useRegister() {
         toast.error("Incorrect email or password");
       } else {
         toast.error("Registration failed");
+      }
+    },
+  });
+}
+export function useVerifyCode() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  return useMutation<
+    ApiResponse<VerifyCodeResponse>,
+    ApiError,
+    VerifyCodePayload
+  >({
+    mutationFn: AUTH.verifyCode,
+
+    onSuccess: (response) => {
+      const verificationData = response.data;
+      const token = verificationData.token;
+      console.log("verifycode", verificationData);
+      dispatch(verifyData(verificationData));
+      setCookie("token", token, { maxAge: 86400 });
+      toast.success("Successfully Registered");
+      router.replace("/players");
+    },
+    onError: (error) => {
+      alert(error?.message);
+      console.log("verify error", error);
+      const status = error?.response?.status || "Login failed";
+      if (status === 404) {
+        toast.error("Code Failed");
+      } else if (status === 401 || status === 500) {
+        toast.error("Incorrect Code");
+      } else {
+        toast.error("Verification failed");
       }
     },
   });

@@ -17,8 +17,6 @@ import { useRegister } from "@/hooks/useAuth";
 import { useState } from "react";
 import { RegisterPayload } from "@/services/auth.service";
 import { useSearchParams } from "next/navigation";
-import { useSelector } from "react-redux";
-import { selectRegister } from "@/app/redux/slices/registerSlice";
 import LoadingSpinner from "@/app/components/Reusable/LoadingSpinner";
 export default function SignupPage() {
   const registerUserMutation = useRegister();
@@ -53,10 +51,7 @@ export default function SignupPage() {
     }
 
     registerUserMutation.mutate(form);
-    console.log("REGISTER PAYLOAD BEING SENT:", form);
   };
-
-  // const registeredUser = useSelector(selectRegister);
   return (
     <CardDemo
       cardIcon={signupUser}

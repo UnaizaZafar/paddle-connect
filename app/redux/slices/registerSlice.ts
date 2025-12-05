@@ -1,30 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
 interface RegisterState {
-  token: string;
   email: string;
-  password: string;
-  name: string;
-  fullName: string;
+  userId: string;
 }
 
 const initialState: RegisterState = {
-  token: "",
   email: "",
-  password: "",
-  name: "",
-  fullName: "",
+  userId: "",
 };
 const registerSlice = createSlice({
   name: "register",
   initialState,
   reducers: {
-    registerData: (state, action: PayloadAction<Partial<RegisterState>>) => {
-      state.token = action.payload.token || "";
+    registerData: (state, action: PayloadAction<RegisterState>) => {
+      state.userId = action.payload.userId || "";
       state.email = action.payload.email || "";
-      state.password = action.payload.password || "";
-      state.name = action.payload.name || "";
-      state.fullName = action.payload.fullName || "";
     },
   },
 });

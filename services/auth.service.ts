@@ -8,6 +8,10 @@ export interface LoginPayload {
 export interface InviteOwnerPayload {
   emails: string[];
 }
+export interface VerifyCodePayload {
+  email: string;
+  code: number;
+}
 export interface RegisterPayload {
   token: string;
   email: string;
@@ -16,6 +20,7 @@ export interface RegisterPayload {
 }
 export interface User {
   id: number;
+  userId: string;
   email: string;
   name?: string;
   fullName?: string;
@@ -36,9 +41,17 @@ export interface AuthResponse {
   token: string;
   accessToken?: string;
   refreshToken?: string;
-  invitations?: string;
+  invitations?: string[];
 }
-
+export interface RegisterResponse {
+  email: string;
+  message: string;
+  userId: string;
+}
+export interface VerifyCodeResponse {
+  userId: string;
+  token: string;
+}
 const AUTH = {
   async login(payload: LoginPayload) {
     const res = await api.post<ApiResponse<AuthResponse>>(
@@ -62,7 +75,7 @@ const AUTH = {
     return res.data;
   },
   async registerUser(payload: RegisterPayload) {
-    const res = await api.post<ApiResponse<AuthResponse>>(
+    const res = await api.post<ApiResponse<RegisterResponse>>(
       `${API_BASE_URL}/register`,
       payload,
       {
@@ -71,7 +84,13 @@ const AUTH = {
         },
       }
     );
-    console.log("res.data", res.data);
+    return res.data;
+  },
+  async verifyCode(payload: VerifyCodePayload) {
+    const res = await api.post<ApiResponse<VerifyCodeResponse>>(
+      `${API_BASE_URL}/verify-code`,
+      payload
+    );
     return res.data;
   },
 };
