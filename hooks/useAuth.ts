@@ -12,7 +12,7 @@ import AUTH, {
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { ApiError } from "next/dist/server/api-utils";
-import { setCookie } from "@/lib/cookies";
+import { setCookie, deleteCookie } from "@/lib/cookies";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addLoginData } from "@/app/redux/slices/userSlice";
@@ -162,4 +162,23 @@ export function useVerifyCode() {
       }
     },
   });
+}
+
+export function useLogout() {
+  return () => {
+    // Redirect IMMEDIATELY - this must be the first action
+    // Using window.location.href for immediate full-page navigation
+    // This bypasses React's render cycle completely
+    const redirectUrl = "/login";
+    window.location.href = redirectUrl;
+    
+    // Clear cookies synchronously (happens during navigation)
+    // These operations are fast and won't cause visible re-render
+    deleteCookie("role");
+    deleteCookie("token");
+    deleteCookie("authData");
+    deleteCookie("loginCreds");
+    
+    // Redux state will be automatically reset when the new page loads
+  };
 }

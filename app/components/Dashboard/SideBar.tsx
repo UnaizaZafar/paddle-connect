@@ -13,11 +13,14 @@ import {
 import { useSelector } from "react-redux";
 import { selectUser } from "@/app/redux/slices/userSlice";
 import Link from "next/link";
+import { useLogout } from "@/hooks/useAuth";
 
 export default function SideBar() {
   const [isSelected, setIsSelected] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
+  const [isSupportOpen, setIsSupportOpen] = useState(false);
   const userData = useSelector(selectUser);
+  const handleLogout = useLogout();
   return (
     <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-[272px] h-screen z-10">
       <div className="px-3 py-3.5 border-b border-soft-200">
@@ -58,7 +61,12 @@ export default function SideBar() {
                   Need support?
                 </p>
               </div>
-              <button onClick={() => setIsOpen(false)} className="cursor-pointer">{close_button}</button>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer"
+              >
+                {close_button}
+              </button>
             </div>
             <p className="text-sub-500 text-sm tracking-tightest leading-5">
               Contact with one of our experts to get support.
@@ -66,19 +74,39 @@ export default function SideBar() {
           </div>
         )}
       </div>
-      <div className="p-6 flex justify-between items-center border-t border-soft-200">
-        <div className="flex gap-3 items-center">
-          {player_profile}
-          <div className="flex flex-col gap-1">
-            <p className="font-medium tracking-tightest text-main-900 text-sm leading-5 flex items-center gap-0.5 w-full">
-              {userData.name} {verified_batch}
-            </p>
-            <p className="text-sub-500 text-xs leading-4 w-11/12 truncate">
-              {userData.email}
-            </p>
+      <div className="relative border-t border-soft-200">
+        <div className="p-6 flex justify-between items-center">
+          <div className="flex gap-3 items-center">
+            {player_profile}
+            <div className="flex flex-col gap-1">
+              <p className="font-medium tracking-tightest text-main-900 text-sm leading-5 flex items-center gap-0.5 w-full">
+                {userData.name} {verified_batch}
+              </p>
+              <p className="text-sub-500 text-xs leading-4 w-11/12 truncate">
+                {userData.email}
+              </p>
+            </div>
           </div>
+          <button onClick={() => setIsSupportOpen(!isSupportOpen)} className="cursor-pointer">
+            {chevron}
+          </button>
         </div>
-        {chevron}
+        {isSupportOpen && (
+          <div className="absolute bottom-3/4 right-2 bg-white border border-soft-200 rounded-lg shadow-lg overflow-hidden w-1/2 ">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                // Call logout immediately without state updates
+                // This ensures redirect happens before any re-renders
+                handleLogout();
+              }}
+              className="w-full px-4 py-3 text-left text-sm text-main-900 hover:bg-weak-100 transition-colors cursor-pointer"
+            >
+              Logout
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

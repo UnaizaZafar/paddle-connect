@@ -10,26 +10,13 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { deleteCookie } from "@/lib/cookies";
 import { gym_logo, gym_racket } from "@/utils/svgs";
-import { removeLoginData } from "@/app/redux/slices/userSlice";
-import { useDispatch } from "react-redux";
+import { useLogout } from "@/hooks/useAuth";
 export default function OnboardingPage() {
-  const dispatch = useDispatch();
-  const router = useRouter();
-  const handleLogout = () => {
-    // Clear all cookies
-    deleteCookie("role");
-    deleteCookie("token");
-    deleteCookie("authData");
-    deleteCookie("loginCreds");
-    dispatch(removeLoginData());
-    // Redirect to login
-    router.replace("/login");
-  };
+  const handleLogout = useLogout();
+
   return (
     <Card className="w-full max-w-126 shadow-custom-card">
       <CardHeader className="flex justify-between items-center">
