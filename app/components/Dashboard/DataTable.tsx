@@ -35,7 +35,12 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="overflow-hidden rounded-lg">
+    <div className="overflow-hidden rounded-lg relative">
+      {fetch && table.getRowModel().rows.length > 0 && (
+        <div className="absolute inset-0 bg-white/70 z-10 flex items-center justify-center">
+          <LoadingSpinner />
+        </div>
+      )}
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((headerGroup) => (
@@ -60,13 +65,26 @@ export function DataTable<TData, TValue>({
         </TableHeader>
 
         <TableBody>
-          {fetch ? (
+          {fetch && table.getRowModel().rows.length > 0 ? (
+            // Show previous data with reduced opacity while fetching
+            table.getRowModel().rows.map((row) => (
+              <TableRow key={row.id} className="opacity-60">
+                {row.getVisibleCells().map((cell) => (
+                  <TableCell key={cell.id}>
+                    {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                  </TableCell>
+                ))}
+              </TableRow>
+            ))
+          ) : fetch ? (
+            // Show loading spinner when no data available
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 <LoadingSpinner />
               </TableCell>
             </TableRow>
           ) : table.getRowModel().rows.length ? (
+            // Show normal data rows
             table.getRowModel().rows.map((row) => (
               <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
@@ -77,6 +95,7 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))
           ) : (
+            // Show no results message
             <TableRow>
               <TableCell colSpan={columns.length} className="h-24 text-center">
                 No results.

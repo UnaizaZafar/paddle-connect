@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import PLAYERS, { PlayersData } from "@/services/player.service";
 
 export interface Player {
@@ -24,5 +24,6 @@ export function usePlayersList(page: number = 1, search: string = "") {
   return useQuery<PlayersData>({
     queryKey: ["players", page, search],
     queryFn: () => PLAYERS.getPlayers(page, search),
+    placeholderData: keepPreviousData,
   });
 }
