@@ -28,21 +28,23 @@ export default function SignupPage() {
     password: "",
     fullName: "",
   });
+  const [passwordError, setPasswordError] = useState("");
+  const isEmailFromURL = searchParams.get("email") !== null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const pwd = form.password;
-    const mail = form.email;
+    const mail = isEmailFromURL ? searchParams.get("email") || "" : form.email;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+=[\]{};':"\\|,.<>/?-]).{8,}$/;
     if (!passRegex.test(pwd)) {
-      const passError = document.getElementById("password-error");
-      if (passError) {
-        passError.innerHTML =
-          "Password must contain at least 8 characters and requires at least one uppercase letter, one lowercase letter, one digit, and one special character.";
-      }
+      setPasswordError(
+        "Password must contain at least 8 characters and requires at least one uppercase letter, one lowercase letter, one digit, and one special character."
+      );
+      return;
     }
+    setPasswordError("");
     if (!emailRegex.test(mail)) {
       const emailError = document.getElementById("email-error");
       if (emailError) {
@@ -69,7 +71,7 @@ export default function SignupPage() {
                 Full Name<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
-                id="fullName"
+                id="name"
                 type="text"
                 placeholder="James Brown"
                 icon={user_line}
@@ -90,7 +92,7 @@ export default function SignupPage() {
                 Email Address<span className="text-primary font-medium">*</span>{" "}
               </Label>
               <Input
-                disabled={form.email !== "" || registerUserMutation.isPending}
+                disabled={isEmailFromURL  || registerUserMutation.isPending}
                 id="email"
                 type="email"
                 placeholder="hello@alignui.com"
@@ -117,22 +119,26 @@ export default function SignupPage() {
                 required
                 placeholder="••••••••••"
                 value={form.password}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setForm((prev) => ({ ...prev, password: e.target.value }))
-                }
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  setForm((prev) => ({ ...prev, password: e.target.value }));
+                  setPasswordError("");
+                }}
                 icon={lock}
                 iconRight={eye_line}
                 disabled={registerUserMutation.isPending}
               />
             </div>
           </div>
-          <div
-            id="password-error"
-            className="flex gap-0.5 text-sub-500 font-inter text-xs"
-          >
-            {error_warning_fill}
-            Must contain 1 uppercase letter, 1 number, min. 8 characters.
-          </div>
+          {passwordError ? (
+            <p id="password-error" className="text-xs text-red-base">
+              {passwordError}
+            </p>
+          ) : (
+            <div className="flex gap-0.5 text-sub-500 font-inter text-xs">
+              {error_warning_fill}
+              Must contain 1 uppercase letter, 1 number, min. 8 characters.
+            </div>
+          )}
           <Button
             size={"xl"}
             type="submit"

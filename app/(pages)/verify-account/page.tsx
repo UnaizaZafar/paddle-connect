@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { CardDemo } from "@/app/components/Authentication/CardDemo";
 import { Button } from "@/components/ui/button";
 import { CardContent } from "@/components/ui/card";
@@ -13,10 +12,13 @@ import {
 import { useVerifyCode } from "@/hooks/useAuth";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { selectRegister } from "@/app/redux/slices/registerSlice";
+import { selectUser } from "@/app/redux/slices/userSlice";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
+import LoadingSpinner from "@/app/components/Reusable/LoadingSpinner";
 export default function VerifyAccountPage() {
-  const getRegisteredData = useSelector(selectRegister);
+  const getRegisteredData = useSelector(selectUser);
+  const router = useRouter();
   const [code, setCode] = useState<string>("");
   const verifyCodeMutation = useVerifyCode();
   const handleVerifyCode = (e: React.FormEvent) => {
@@ -81,19 +83,21 @@ export default function VerifyAccountPage() {
             variant={"submit"}
             className="w-full p-3.5 leading-5 font-semibold"
           >
-            Verify Code
+            {verifyCodeMutation.isPending ? <LoadingSpinner /> : "Verify Code"}
           </Button>
         </form>
       </CardContent>
 
       <div className="flex flex-col gap-1 font-inter tracking-tightest text-sub-500 text-sm place-self-center leading-5 text-center">
         Experiencing issues receiving the code?
-        <Link
-          href="/login"
-          className="dark:text-sub-400 text-main-900 hover:text-sub-500 underline"
+        <Button
+          type="submit"
+          onClick={() => router.push("/login")}
+          size={"xl"}
+          className="text-soft-200 hover:underline"
         >
           Resend code
-        </Link>
+        </Button>
       </div>
     </CardDemo>
   );

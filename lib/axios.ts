@@ -17,7 +17,7 @@ let isRefreshing = false;
 // ✅ Request Interceptor (e.g., attach  token)
 api.interceptors.request.use(
   (config) => {
-    const token = store.getState().login.token;
+    const token = store.getState().user.token;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

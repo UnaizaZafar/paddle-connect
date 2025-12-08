@@ -47,6 +47,8 @@ export interface RegisterResponse {
   email: string;
   message: string;
   userId: string;
+  name: string;
+  isFromSignup: boolean;
 }
 export interface VerifyCodeResponse {
   userId: string;

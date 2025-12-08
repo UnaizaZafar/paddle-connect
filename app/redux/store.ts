@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import loginReducer from "@/app/redux/slices/userSlice";
+import userReducer from "@/app/redux/slices/userSlice";
 import inviteReducer from "@/app/redux/slices/inviteOwnerSlice";
-import registerReducer from "@/app/redux/slices/registerSlice";
 import verifyReducer from "@/app/redux/slices/verificationSlice";
 import {
   persistStore,
@@ -18,12 +17,11 @@ import storage from "redux-persist/lib/storage"; // defaults to localStorage for
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["login"],
+  whitelist: ["user"],
 };
 const rootReducer = combineReducers({
-  login: loginReducer,
+  user: userReducer,
   invite: inviteReducer,
-  register: registerReducer,
   verify: verifyReducer,
 });
 

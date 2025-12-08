@@ -72,7 +72,7 @@ export default function InviteGymOwnerPage() {
           </Button>
         </form>
       </CardContent>
-      <Button onClick={handleLogout} className="text-white">
+      <Button size={"xl"} onClick={handleLogout} className="text-white">
         Logout
       </Button>
     </CardDemo>

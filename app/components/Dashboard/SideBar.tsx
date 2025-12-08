@@ -20,6 +20,8 @@ export default function SideBar() {
   const [isOpen, setIsOpen] = useState(true);
   const [isSupportOpen, setIsSupportOpen] = useState(false);
   const userData = useSelector(selectUser);
+  const displayName = userData.name;
+  const displayEmail = userData.email;
   const handleLogout = useLogout();
   return (
     <div className="flex flex-col font-inter border-r border-soft-200 w-full max-w-[272px] h-screen z-10">
@@ -80,14 +82,17 @@ export default function SideBar() {
             {player_profile}
             <div className="flex flex-col gap-1">
               <p className="font-medium tracking-tightest text-main-900 text-sm leading-5 flex items-center gap-0.5 w-full">
-                {userData.name} {verified_batch}
+                {displayName} {verified_batch}
               </p>
               <p className="text-sub-500 text-xs leading-4 w-11/12 truncate">
-                {userData.email}
+                {displayEmail}
               </p>
             </div>
           </div>
-          <button onClick={() => setIsSupportOpen(!isSupportOpen)} className="cursor-pointer">
+          <button
+            onClick={() => setIsSupportOpen(!isSupportOpen)}
+            className="cursor-pointer"
+          >
             {chevron}
           </button>
         </div>
@@ -97,8 +102,6 @@ export default function SideBar() {
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                // Call logout immediately without state updates
-                // This ensures redirect happens before any re-renders
                 handleLogout();
               }}
               className="w-full px-4 py-3 text-left text-sm text-main-900 hover:bg-weak-100 transition-colors cursor-pointer"

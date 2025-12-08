@@ -15,8 +15,7 @@ import { ApiError } from "next/dist/server/api-utils";
 import { setCookie, deleteCookie } from "@/lib/cookies";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
-import { addLoginData } from "@/app/redux/slices/userSlice";
-import { registerData } from "@/app/redux/slices/registerSlice";
+import { addLoginData, registerData } from "@/app/redux/slices/userSlice";
 import { verifyData } from "@/app/redux/slices/verificationSlice";
 export function useLogin() {
   const router = useRouter();
@@ -113,14 +112,18 @@ export function useRegister() {
   const dispatch = useDispatch();
   return useMutation<ApiResponse<RegisterResponse>, ApiError, RegisterPayload>({
     mutationFn: (payload: RegisterPayload) => AUTH.registerUser(payload),
-    onSuccess: (response) => {
+    onSuccess: (response, variables) => {
       const registeredData = response.data;
-      dispatch(registerData(registeredData));
+      // Include fullName from the form payload, prioritizing it over API response name
+      dispatch(registerData({
+        ...registeredData,
+        name: variables.fullName || registeredData.name || "",
+      }));
       router.replace("/verify-account");
       toast.success("Successfully Registered");
     },
     onError: (error) => {
-      alert(error?.message);
+      console.log("error",error)
       const status = error?.response?.status || "Login failed";
       if (status === 404) {
         toast.error("User doesn't exist");
