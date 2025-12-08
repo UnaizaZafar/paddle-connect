@@ -52,7 +52,7 @@ export const tableColumns: ColumnDef<Player, unknown>[] = [
     accessorKey: "createdAt",
     header: "Created At",
     cell: ({ row }) =>
-      row.original?.dateOfBirth ? formatDate(row.original.dateOfBirth) : "—",
+      row.original?.createdAt ? formatDate(row.original.createdAt) : "—",
   },
   {
     accessorKey: "status",

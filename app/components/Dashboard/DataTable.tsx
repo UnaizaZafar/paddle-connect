@@ -15,16 +15,18 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import LoadingSpinner from "../Reusable/LoadingSpinner";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  isLoading: boolean;
+  fetch: boolean;
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  fetch,
 }: DataTableProps<TData, TValue>) {
   const table = useReactTable({
     data,
@@ -56,14 +58,17 @@ export function DataTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
+
         <TableBody>
-          {table.getRowModel().rows?.length ? (
+          {fetch ? (
+            <TableRow>
+              <TableCell colSpan={columns.length} className="h-24 text-center">
+                <LoadingSpinner />
+              </TableCell>
+            </TableRow>
+          ) : table.getRowModel().rows.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow
-                className="border-soft-200"
-                key={row.id}
-                data-state={row.getIsSelected() && "selected"}
-              >
+              <TableRow key={row.id}>
                 {row.getVisibleCells().map((cell) => (
                   <TableCell key={cell.id}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}

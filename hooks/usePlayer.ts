@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import PLAYERS from "@/services/player.service";
+import PLAYERS, { PlayersData } from "@/services/player.service";
 
 export interface Player {
   id: string;
@@ -20,9 +20,9 @@ export interface Player {
   gymName: string | null;
 }
 
-export function usePlayersList() {
-  return useQuery<Player[]>({
-    queryKey: ["players"],
-    queryFn: PLAYERS.getPlayers,
+export function usePlayersList(page: number = 1, search: string = "") {
+  return useQuery<PlayersData>({
+    queryKey: ["players", page, search],
+    queryFn: () => PLAYERS.getPlayers(page, search),
   });
 }

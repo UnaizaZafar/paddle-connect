@@ -15,6 +15,7 @@ export interface Player {
   countryCode: string;
   rank: string;
   dateOfBirth: string;
+  createdAt?: string;
   city: string;
   gender: string;
   gymName: string | null;
@@ -34,11 +35,18 @@ export interface PlayersData {
     totalPages: number;
   };
 }
+
 const PLAYERS = {
-  async getPlayers(): Promise<Player[]> {
-    const res = await api.get<ApiResponse<PlayersData>>("/players");
-    console.log("res", res.data.data.stats);
-    return res.data.data.players;
+  async getPlayers(page: number = 1, search: string = ""): Promise<PlayersData> {
+    const params = new URLSearchParams();
+    if (page) params.append("page", page.toString());
+    if (search) params.append("search", search);
+    
+    const queryString = params.toString();
+    const url = queryString ? `/players?${queryString}` : "/players";
+    
+    const res = await api.get<ApiResponse<PlayersData>>(url);
+    return res.data.data;
   },
 };
 export default PLAYERS;

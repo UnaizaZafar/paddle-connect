@@ -26,6 +26,18 @@ export function proxy(request: NextRequest) {
 
   const res = NextResponse.next();
 
+  // Handle root route
+  if (pathname === "/") {
+    if (token) {
+      if (role === "SUPER_ADMIN") {
+        return NextResponse.redirect(new URL("/invite-gym-owner", request.url));
+      }
+      return NextResponse.redirect(new URL("/players", request.url));
+    }
+    // Allow access to home page if not logged in
+    return res;
+  }
+
   // ✅ BLOCK BACK BUTTON CACHE
   res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate");
   res.headers.set("Pragma", "no-cache");
@@ -51,11 +63,6 @@ export function proxy(request: NextRequest) {
   // ===============================
   // 👤 USER FLOW CONTROL
   // ===============================
-
-  // ✅ User must complete onboarding before players
-  if (role === "PLAYER" && pathname.startsWith("/players") && !onboardingDone) {
-    return NextResponse.redirect(new URL("/onboarding", request.url));
-  }
 
   // ✅ User must NOT access onboarding again if completed
   if (role === "PLAYER" && pathname.startsWith("/onboarding") && onboardingDone) {

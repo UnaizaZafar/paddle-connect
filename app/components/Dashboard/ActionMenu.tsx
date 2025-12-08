@@ -19,7 +19,6 @@ export default function ActionMenu() {
           <button
             className="flex gap-2 w-full p-2 text-sm hover:bg-gray-100"
             onClick={() => {
-              console.log("Approved");
               setIsOpen(false);
             }}
           >
@@ -30,7 +29,6 @@ export default function ActionMenu() {
           <button
             className="flex gap-2 w-full text-left p-2 hover:bg-gray-100"
             onClick={() => {
-              console.log("Rejected");
               setIsOpen(false);
             }}
           >

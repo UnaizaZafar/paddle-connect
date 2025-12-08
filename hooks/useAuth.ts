@@ -36,7 +36,7 @@ export function useLogin() {
       }
       setCookie("role", role, { maxAge: 86400 });
       setCookie("token", token, { maxAge: 86400 });
-      router.replace("/onboarding");
+      router.replace("/players");
       toast.success("Successfully Logged in");
     },
     onError: (error) => {
@@ -68,9 +68,9 @@ export function useAdminLogin() {
         alert("Login failed: No token received");
         return;
       }
+      router.replace("/invite-gym-owner");
       setCookie("role", role, { maxAge: 86400 });
       setCookie("token", token, { maxAge: 86400 });
-      router.replace("/invite-gym-owner");
       toast.success("Successfully Logged in");
     },
     onError: (error) => {
@@ -89,23 +89,12 @@ export function useInviteGymOwner() {
   const router = useRouter();
   return useMutation<ApiResponse<AuthResponse>, ApiError, InviteOwnerPayload>({
     mutationFn: AUTH.inviteGymOwner,
-    onSuccess: (response) => {
-      // const authData = response.data;
-      console.log("invite data response", response);
-
-      // const inviteLink = response?.data?.invitations?.[0]?.link;
-      // if (response?.data?.invitations?.success) {
-      //   toast.error("Invite Not Sent");
-      // } else {
-      //   toast.success("Successfully Sent Invite");
-      // }
+    onSuccess: () => {
       toast.success("Successfully Sent Invite");
 
       router.replace("/players");
     },
     onError: (error) => {
-      console.log("invite gym owner", error);
-
       const status = error?.response?.status || "Login failed";
       const message = error?.response?.data?.message;
       if (status === 404) {
@@ -156,7 +145,6 @@ export function useVerifyCode() {
     onSuccess: (response) => {
       const verificationData = response.data;
       const token = verificationData.token;
-      console.log("verifycode", verificationData);
       dispatch(verifyData(verificationData));
       setCookie("token", token, { maxAge: 86400 });
       toast.success("Successfully Registered");
@@ -164,7 +152,6 @@ export function useVerifyCode() {
     },
     onError: (error) => {
       alert(error?.message);
-      console.log("verify error", error);
       const status = error?.response?.status || "Login failed";
       if (status === 404) {
         toast.error("Code Failed");
